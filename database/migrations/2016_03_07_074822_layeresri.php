@@ -26,7 +26,7 @@ class Layeresri extends Migration {
 
 
 	public function down(){
-		Schema::drop('layeresri');
+		Schema::dropIfExists('layeresri');
 	}
 
 }

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->string('password', 60);
 			$table->timestamp('latestlogin')->nullable();
 			$table->smallInteger('isactive')->nullable();
+			$table->smallInteger('level')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});
@@ -33,7 +34,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('users');
+		Schema::dropIfExists('users');
 	}
 
 }

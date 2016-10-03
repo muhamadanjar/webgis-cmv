@@ -16,8 +16,6 @@ class CAuthController extends Controller {
     public function __construct(Guard $auth){
         $this->auth = $auth;
         
-        //$this->setting = $setting;
-        //$this->_s = new AHelper();
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
@@ -35,12 +33,11 @@ class CAuthController extends Controller {
         ]);
         $credentials = $request->only('username', 'password');
         
-        if (Auth::attempt($credentials,$request->has('remember')))
-        {   
+        if (Auth::attempt($credentials,$request->has('remember'))){   
             $user = User::find(Auth::user()->id);
             $user->latestlogin = date('Y-m-d H:i:s');
             $user->save();
-            //$this->_s->updateSessionMenu();
+            
            
             return redirect()->intended($this->redirectPath());
         }
@@ -48,20 +45,17 @@ class CAuthController extends Controller {
         
 
         return redirect($this->loginPath())
-                    ->withInput($request->only('username', 'remember'))
-                    ->withErrors([
-                        'username' => $this->getFailedLoginMessage(),
-                    ]);
+            ->withInput($request->only('username', 'remember'))
+            ->withErrors([
+                'username' => $this->getFailedLoginMessage(),
+            ]);
     }
 
     
 
     public function getLogout(){
         $this->auth->logout();
-       
-     
-        //Session::forget('menusess');
-        //Session::forget('menusessnav');
+
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
@@ -76,8 +70,6 @@ class CAuthController extends Controller {
 
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
-
-    
 
     public function loginPath(){
         return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';

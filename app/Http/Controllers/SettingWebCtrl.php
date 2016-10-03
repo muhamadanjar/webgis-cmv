@@ -72,6 +72,11 @@ class SettingWebCtrl extends Controller {
 	}
 
 
+	public function getGantiprofil($value=''){
+		return 'ganti profil';
+	}
+
+
 
 
 }

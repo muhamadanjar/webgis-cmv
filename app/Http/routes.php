@@ -22,6 +22,7 @@ Route::group(array('prefix'=>'admin'), function(){
 	Route::get('index','HomeController@index');
 	Route::controller('layer','LayerCtrl');
 	Route::controller('setting','SettingWebCtrl');
+	Route::controller('user','UserCtrl');
 
 
 	Route::get('login',  ['as' => 'login', 'uses' => 'CAuthController@getLogin']);   
