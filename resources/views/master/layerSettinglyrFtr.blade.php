@@ -85,15 +85,14 @@ $url_service = ($layers->tipelayer == 'dynamic' ? $layers->layerurl.'/'.$idx : $
                   @endforeach
 
               @else
-              @foreach($field->fields as $key => $a)
-              <?php $b = ($layers->tipelayer == 'dynamic' ? $a->alias : $a->name); ?>
-              
-              <tr>
-                <td><input type="checkbox" class="checkbox" name="visible[{{ $key }}]" value="{{ $b }}" /></td>
-                <td>{{ $a->name }}<input type="hidden" name="name_field[]" value="{{ $b }}"></td>
-                <td><input type="text" class="form-control" name="label_field[]" value="{{ $b }}"></td>
-              </tr>
-              @endforeach
+                  @foreach($field->fields as $key => $a)
+                  <?php $b = ($layers->tipelayer == 'dynamic' ? $a->alias : $a->name); ?>
+                  <tr>
+                    <td><input type="checkbox" class="checkbox" name="visible[{{ $key }}]" value="{{ $b }}" /></td>
+                    <td>{{ $a->name }}<input type="hidden" name="name_field[]" value="{{ $b }}"></td>
+                    <td><input type="text" class="form-control" name="label_field[]" value="{{ $b }}"></td>
+                  </tr>
+                  @endforeach
               @endif
 
 
@@ -148,6 +147,10 @@ $url_service = ($layers->tipelayer == 'dynamic' ? $layers->layerurl.'/'.$idx : $
         @endforeach
         @else
         <div class="form-group">
+            <label>Media</label>
+            <input type="checkbox" name="mediaonoff" value="1">
+        </div>
+        <div class="form-group">
           <label>Type</label>
           <select name="type_m" class="form-control" id="type_m">
             <option value="image">Image</option>
@@ -161,6 +164,7 @@ $url_service = ($layers->tipelayer == 'dynamic' ? $layers->layerurl.'/'.$idx : $
           <input type="text" name="link_m" placeholder="Link URL" class="form-control" id="media" value="{{ $link_m }}">
           <input type="text" name="url_m" placeholder="Source URL" class="form-control" id="media" value="{{ $url_m }}">
         </div>
+
         <div class="form-group" id="media-list">
           <label for="title">Media</label>
           <div id="dim"></div>

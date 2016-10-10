@@ -223,7 +223,7 @@ class LayerCtrl extends Controller {
 			}else{
 				$comma_separated = implode(",", $fields);
 				$comma_separated = explode(",", $comma_separated);
-				
+				$value['fields_'] = $fields;
               	$value['fields'] = $comma_separated;
 			}
 			
