@@ -16,6 +16,7 @@ class Layeresri extends Migration {
 	        $table->integer('id_grouplayer')->nullable();
 	        $table->integer('orderlayer');
 	        $table->string('tipelayer',10);
+	        $table->string('display',10);
 	        $table->decimal('option_opacity')->default(1.0);
 	        $table->boolean('option_visible')->default(false);
 	        $table->integer('option_mode')->unsigned()->default(1);

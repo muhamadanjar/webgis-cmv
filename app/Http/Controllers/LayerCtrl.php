@@ -110,6 +110,7 @@ class LayerCtrl extends Controller {
 	public function postLayerinfopopup($id,$idx,$layern){
 		$fieldinfo = $this->getFieldinfos();
 		$medias = $this->getMedias();
+	
 		$desc = \Input::get('display') == 'keyvalue' ? $this->getDesc():\Input::get('description');
 		$rules = array(
 			'layername' => 'required',
@@ -154,9 +155,8 @@ class LayerCtrl extends Controller {
 				$identify->touch();
 				$msg = 'edit';
 			}
-			//return $medias;
-			//return $msg." ".$idx." ".$desc;
-			return redirect('layer');
+			
+			return redirect('admin/layer');
 	    }
 	}
 	public function getFields($id,$idx){
@@ -220,8 +220,11 @@ class LayerCtrl extends Controller {
 			if ($type == 'image') {
 				$value['sourceURL'] = $url;
 				$value['linkURL'] = $link;
-			}else {
-              	$value['fields'] = $fields;
+			}else{
+				$comma_separated = implode(",", $fields);
+				$comma_separated = explode(",", $comma_separated);
+				
+              	$value['fields'] = $comma_separated;
 			}
 			
 

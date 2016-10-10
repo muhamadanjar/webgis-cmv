@@ -76,6 +76,7 @@ class MapCtrl extends Controller {
 		$arrayfieldinfo = array(); $arrayfieldinfos = array();
 		$n = array();
 		foreach ($identify as $key => $value) {
+
 			unset($arraylayerid);
 			unset($arrayfieldinfos);
 			$kodec = base64_encode($value['tablename']);
@@ -91,7 +92,7 @@ class MapCtrl extends Controller {
 			}
 			$arrayfieldinfos['showAttachments'] = $value['showattachments'];
 			$arrayfieldinfos['mediaInfos'] = $value['media'];
-			$arrayfieldinfos['editinfo'] = $value['id_identify'].'|'.(base64_encode($value['tablename']));
+			
 
 		
 			$arraylayerid[(int)$value['layerid']] = $arrayfieldinfos;

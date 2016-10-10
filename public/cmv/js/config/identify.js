@@ -20,7 +20,7 @@ define({
 
 	// for details on pop-up definition see: https://developers.arcgis.com/javascript/jshelp/intro_popuptemplate.html
 
-	identifies: {
+	identifies: idn /*{
 		
 		ilok:{
 			0:{
@@ -259,9 +259,5 @@ define({
 				}]	
 			}
 		}
-
-		
-		
-		
-	}
+	}*/
 });
