@@ -54,9 +54,7 @@ class MapCtrl extends Controller {
 			    $operationallayer_['title'] = $layer->layername;
 			    $operationallayer_['options'] = $options;
 			    $operationallayer_['layerControlLayerInfos'] = $layerControlLayerInfos;
-			    
-               
-            
+
 			    $layerIds = ['layerIds' => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]];
 			    $operationallayer_['identifyLayerInfos'] = $layerIds;
 			    $operationallayer_['roles'] = $layer->roles;

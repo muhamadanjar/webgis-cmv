@@ -22,9 +22,9 @@ class SettingWebCtrl extends Controller {
 		$array = array();
 		foreach ($layers as $key => $l) {
 			$array[$key] = str_replace($search, $replace, $l->layerurl);
-			DB::table('Layers')->where('id_layer', $l->id_layer)->update(['layerurl' => $array[$key]]);
+			\DB::table('layeresri')->where('id_layer', $l->id_layer)->update(['layerurl' => $array[$key]]);
 		}
-		return Redirect::to('/setting/setting-url');
+		return \Redirect::to('/setting/setting-url');
 		
 	}
 

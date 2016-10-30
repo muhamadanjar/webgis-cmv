@@ -1,4 +1,4 @@
-@extends('app')
+@extends('template.londinium')
 
 @section('content')
 	<div class="container-fluid">
@@ -6,7 +6,7 @@
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<a href="{{ url('admin/user/tambah') }}" class="btn btn-success">Tambah</a>
-				<div class="panel-heading">Daftar User</div>
+				<div class="panel-heading"><h6 class="panel-title"><i class="icon-user"></i> Daftar User</h6></div>
 				<div class="panel-body">
 					<table class="table table-bordered">
 						<tr>
