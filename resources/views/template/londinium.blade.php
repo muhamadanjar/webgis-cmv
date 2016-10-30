@@ -486,7 +486,7 @@
 			@yield('callout')
             <!-- /callout -->
 
-           
+           	@yield('content')
 
 	        <!-- Modal options -->
             <div class="panel panel-default">
