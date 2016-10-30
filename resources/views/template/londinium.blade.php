@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>Londinium - premium responsive admin template by Eugene Kopyov</title>
+<title>WebGIS - CMV</title>
 
 @include('template.londinium-css')
 
@@ -16,9 +16,10 @@
 <body class="navbar-fixed">
 
 	<!-- Navbar -->
+
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#"><img src="images/logo.png" alt="Londinium"></a>
+			<a class="navbar-brand" href="#"><img src="{{ asset('images/logo.png')}}" alt="Administrator"></a>
 			<a class="sidebar-toggle"><i class="icon-paragraph-justify2"></i></a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-icons">
 				<span class="sr-only">Toggle navbar</span>
@@ -29,7 +30,7 @@
 				<i class="icon-paragraph-justify2"></i>
 			</button>
 		</div>
-
+		@if(\Auth::check())
 		<ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
@@ -178,7 +179,7 @@
 			<li class="user dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
 					<img src="http://placehold.it/300" alt="">
-					<span>Eugene Kopyov</span>
+					<span>{{ \Auth::user()->name }}</span>
 					<i class="caret"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
@@ -189,6 +190,7 @@
 				</ul>
 			</li>
 		</ul>
+		@endif
 	</div>
 	<!-- /navbar -->
 
@@ -839,497 +841,6 @@
             <hr>
 
 
-			<!-- Spinners -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-	                <h6 class="panel-title"><i class="icon-spinner7 spin"></i> Spinners</h6> 
-	                <i class="icon-spinner2 spin pull-right panel-icon"></i>
-                </div>
-                <div class="panel-body">
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<i class="icon-spinner2 spin block-inner"></i>
-							<button class="btn btn-primary btn-block run-first">Run loading spinner</button> 
-						</div>
-						<div class="col-md-4 text-center">
-							<i class="icon-spinner3 spin block-inner"></i>
-							<button class="btn btn-primary btn-block run-second">Run loading spinner</button> 
-						</div>
-						<div class="col-md-4 text-center">
-							<i class="icon-spinner7 spin block-inner"></i>
-							<button class="btn btn-primary btn-block run-third">Run loading spinner</button> 
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /spinners -->
-
-
-	        <!-- Progress bars -->
-            <div class="panel panel-default">
-                <div class="panel-heading"><h6 class="panel-title"><i class="icon-settings"></i> Progress bars</h6></div>
-                <div class="panel-body">
-    				<div class="row">
-    					<div class="col-md-6">
-        					<span class="subtitle"><i class="icon-droplet"></i> Progress bar colors</span>
-        					<div class="well">
-
-								<div class="progress block-inner">
-									<div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
-										<span class="sr-only">15% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress block-inner">
-									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
-										<span class="sr-only">35% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress block-inner">
-									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
-										<span class="sr-only">55% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress block-inner">
-									<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-										<span class="sr-only">75% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress">
-									<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-										<span class="sr-only">95% Complete</span>
-									</div>
-								</div>
-        					</div>
-    					</div>
-
-    					<div class="col-md-6">
-    						<span class="subtitle"><i class="icon-cogs"></i> Progress bar options</span>
-    						<div class="well">
-
-								<div class="progress progress-striped block-inner">
-									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
-										<span class="sr-only">20% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress progress-striped active block-inner">
-									<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-										<span class="sr-only">40% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress progress-micro block-inner">
-									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-										<span class="sr-only">60% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress progress-thin block-inner">
-									<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-										<span class="sr-only">80% Complete</span>
-									</div>
-								</div>
-
-								<div class="progress">
-									<div class="progress-bar progress-bar-success" style="width: 35%">
-									<span class="sr-only">35% Complete (success)</span>
-								</div>
-									<div class="progress-bar progress-bar-warning" style="width: 20%">
-									<span class="sr-only">20% Complete (warning)</span>
-								</div>
-								<div class="progress-bar progress-bar-danger" style="width: 10%">
-									<span class="sr-only">10% Complete (danger)</span>
-									</div>
-								</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-			<!-- /progress bars -->
-
-
-	        <!-- Alerts -->
-            <div class="panel panel-default">
-                <div class="panel-heading"><h6 class="panel-title"><i class="icon-bubble-plus"></i> Alerts</h6></div>
-                <div class="panel-body">
-		            <div class="alert alert-danger fade in block-inner">
-		                <button type="button" class="close" data-dismiss="alert">×</button>
-		                <i class="icon-cancel-circle"></i> Error alert
-		            </div>
-
-		            <div class="alert alert-success fade in block-inner">
-		                <button type="button" class="close" data-dismiss="alert">×</button>
-		                <i class="icon-checkmark-circle"></i> Success alert
-		            </div>
-
-		            <div class="alert alert-warning fade in block-inner">
-		                <button type="button" class="close" data-dismiss="alert">×</button>
-		                <i class="icon-warning"></i> Warning &amp; default alert
-		            </div>
-
-		            <div class="alert alert-info fade in">
-		                <button type="button" class="close" data-dismiss="alert">×</button>
-		                <i class="icon-info"></i> Good to know! Info alert
-		            </div>
-	            </div>
-	        </div>
-	        <!-- /alerts -->
-
-
-	        <!-- Alert blocks -->
-            <div class="panel panel-default">
-                <div class="panel-heading"><h6 class="panel-title"><i class="icon-bubble-plus"></i> Alerts</h6></div>
-                <div class="panel-body">
-		        	<div class="row">
-		        		<div class="col-md-6">
-							<div class="alert alert-block alert-danger fade in block-inner">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-								<h6><i class="icon-command"></i> Oh snap! You got an error!</h6>
-								<hr>
-								<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-								<div class="text-left">
-									<a class="btn btn-primary" href="#"><i class="icon-link"></i> Take action</a> 
-									<a class="btn btn-success" href="#"><i class="icon-link2"></i> Or do this</a>
-								</div>
-							</div>
-
-							<div class="alert alert-block alert-success fade in">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-								<h6><i class="icon-command"></i> Oh snap! You got an error!</h6>
-								<hr>
-								<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-								<div class="text-left">
-									<a class="btn btn-info" href="#"><i class="icon-link"></i> Take action</a> 
-									<a class="btn btn-warning" href="#"><i class="icon-link2"></i> Or do this</a>
-								</div>
-							</div>
-		        		</div>
-
-		        		<div class="col-md-6">
-							<div class="alert alert-block alert-info fade in block-inner">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-								<h6><i class="icon-command"></i> Oh snap! You got an error!</h6>
-								<hr>
-								<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-								<div class="text-left">
-									<a class="btn btn-danger" href="#"><i class="icon-link"></i> Take action</a> 
-									<a class="btn btn-info" href="#"><i class="icon-link2"></i> Or do this</a>
-								</div>
-							</div>
-
-							<div class="alert alert-block alert-warning fade in">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-								<h6><i class="icon-command"></i> Oh snap! You got an error!</h6>
-								<hr>
-								<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-								<div class="text-left">
-									<a class="btn btn-primary" href="#"><i class="icon-link"></i> Take action</a> 
-									<a class="btn btn-default" href="#"><i class="icon-link2"></i> Or do this</a>
-								</div>
-							</div>
-		        		</div>
-		        	</div>
-	            </div>
-	        </div>
-	        <!-- /alert blocks -->
-
-
-            <!-- Tooltips -->
-            <div class="panel panel-default">
-                <div class="panel-heading"><h6 class="panel-title"><i class="icon-bubble6"></i> Tooltips</h6></div>
-                <div class="panel-body">
-                	<div class="text-center">
-	                    <a href="#" data-placement="top" title="Tooltip on top" class="btn btn-primary tip">Top</a>
-	                    <a href="#" data-placement="right" title="Tooltip on right" class="btn btn-primary tip">Right</a>
-	                    <a href="#" data-placement="bottom" title="Tooltip on bottom" class="btn btn-primary tip">Bottom</a>
-	                    <a href="#" data-placement="left" title="Tooltip on left" class="btn btn-primary tip">Left</a>
-                    </div>
-                </div>
-            </div>
-            <!-- /tooltips -->
-
-
-	        <!-- Popover -->
-            <div class="panel panel-default">
-                <div class="panel-heading"><h6 class="panel-title"><i class="icon-bubble-dots"></i> Popovers</h6></div>
-                <div class="panel-body">
-	            	<div class="row">
-		                <div class="col-md-3">
-		                    <div class="popover top" style="position: relative; display: block; margin: 0 auto; width: 100%; z-index: 990">
-		                        <div class="arrow"></div>
-		                        <h3 class="popover-title">Popover top</h3>
-		                        <div class="popover-content">
-		                            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="col-md-3">
-		                    <div class="popover bottom" style="position: relative; display: block; margin: 0 auto; width: 100%; z-index: 990">
-		                        <div class="arrow"></div>
-		                        <h3 class="popover-title">Popover bottom</h3>
-		                        <div class="popover-content">
-		                            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="col-md-3">
-		                    <div class="popover right" style="position: relative; display: block; margin: 0 auto; width: 100%; z-index: 990">
-		                        <div class="arrow"></div>
-		                        <h3 class="popover-title">Popover right</h3>
-		                        <div class="popover-content">
-		                            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="col-md-3">
-		                    <div class="popover left" style="position: relative; display: block; margin: 0 auto; width: 100%; z-index: 990">
-		                        <div class="arrow"></div>
-		                        <h3 class="popover-title">Popover left</h3>
-		                        <div class="popover-content">
-		                            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		                        </div>
-		                    </div>
-		                </div>
-		            </div>
-
-		            <hr>
-
-		            <div class="row">
-			            <div class="col-md-3">
-				            <button class="btn btn-info btn-block" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">Top popover</button>
-			            </div>
-
-			            <div class="col-md-3">
-				            <button class="btn btn-success btn-block" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on bottom">Bottom popover</button>
-			            </div>
-
-			            <div class="col-md-3">
-				            <button class="btn btn-warning btn-block" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on right">Right popover</button>
-			            </div>
-
-			            <div class="col-md-3">
-				            <button class="btn btn-danger btn-block" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on left">Left popover</button>
-			            </div>
-		            </div>
-	            </div>
-	        </div>
-	        <!-- /popover -->
-
-
-	        <!-- Datepicker -->
-            <div class="panel panel-default">
-                <div class="panel-heading"><h6 class="panel-title"><i class="icon-bubble4"></i> Date picker</h6></div>
-                <div class="panel-body">
-	                <div class="row">
-	                    <div class="col-md-6">
-		                    <span class="subtitle"><i class="icon-cogs"></i> Date picker options</span>
-		                    <div class="well">
-	                        <form action="#" role="form">
-	                        	<div class="form-group">
-	                        		<div class="row">
-		                        		<div class="col-sm-6">
-			                        		<label>Default date picker: </label>
-		                        			<input type="text" class="datepicker form-control" placeholder="Default datepicker">
-		                        		</div>
-
-		                        		<div class="col-sm-6">
-			                        		<label>Multiple date picker: </label>
-		                        			<input type="text" class="datepicker-multiple form-control" placeholder="Multiple months">
-		                        		</div>
-	                        		</div>
-	                        	</div>
-
-	                            <div class="form-group">
-	                                <label>Date range: </label>
-	                                <div class="row">
-	                                	<div class="col-sm-6">
-	                                        <input type="text" class="from-date form-control" name="from" placeholder="From">
-                                        </div>
-
-                                        <div class="col-sm-6">
-	                                        <input type="text" class="to-date form-control" name="to" placeholder="To">
-                                        </div>
-	                                </div>
-	                            </div>
-
-                        		<div class="row">
-	                        		<div class="col-sm-6">
-		                        		<label>Icon trigger: </label>
-	                        			<input type="text" name="trigger" placeholder="Click on icon..." class="datepicker-trigger form-control">
-	                        		</div>
-
-	                        		<div class="col-sm-6">
-		                        		<label>Restricted date: </label>
-	                        			<input type="text" class="datepicker-restricted form-control" placeholder="Min date is Aug, 13">
-	                        		</div>
-                        		</div>
-	                        </form>  
-	                        </div>                    
-	                    </div>
-	                
-	                    <div class="col-md-6">
-	                        <span class="subtitle"><i class="icon-droplet"></i> Default date picker style</span>
-	                        <div class="well clearfix">
-	                            <div class="datepicker-inline" style="margin: 0 auto; width: 20em;"></div>
-	                        </div>
-	                    </div>
-	                </div>
-                </div>
-            </div>
-            <!-- /datepicker -->
-
-
-			<!-- Sliders -->
-			<div class="panel panel-default form-horizontal form-bordered">
-				<div class="panel-heading"><h6 class="panel-title"><i class="icon-settings"></i> Sliders</h6></div>
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Default slider:</label>
-                    <div class="col-md-10">
-	                    <div id="default-slider"></div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Snap to increments:</label>
-                    <div class="col-md-10">
-                    	<div class="slider-controls">
-	                    	<label for="donation-amount">Donation amount ($50 increments):</label>
-							<input type="text" id="donation-amount" />
-						</div>
-                    	<div id="increments-slider"></div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Range slider:</label>
-                    <div class="col-md-10">
-                    	<div class="slider-controls">
-	                    	<label for="price-amount1">Price range:</label>
-							<input type="text" id="price-amount1" />
-						</div>
-                    	<div id="range-slider1"></div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Range with fixed minimum:</label>
-                    <div class="col-md-10">
-                    	<div class="slider-controls">
-	                    	<label for="min-amount1">Maximum price:</label>
-							<input type="text" id="min-amount1" />
-						</div>
-                    	<div id="slider-range-min1"></div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Range with fixed maximum:</label>
-                    <div class="col-md-10">
-                    	<div class="slider-controls">
-	                    	<label for="max-amount1">Minimum number of bedrooms:</label>
-							<input type="text" id="max-amount1" />
-						</div>
-                    	<div id="slider-range-max1"></div>
-                    </div>
-                </div>
-			</div>
-			<!-- /sliders --> 
-
-
-            <!-- Color & time pickers -->
-            <div class="row">
-	            <div class="col-md-6">
-		            <div class="panel panel-default">
-		                <div class="panel-heading"><h6 class="panel-title"><i class="icon-droplet2"></i> Color picker</h6></div>
-		                <div class="panel-body">
-		                	<div class="row form-horizontal">
-	                            <div class="form-group">
-	                                <label class="col-md-2 control-label">HEX format:</label>
-	                                <div class="col-md-10">
-		                                <input type="text" value="#8fff00" class="color-picker-hex form-control">
-	                                </div>
-	                            </div>
-	                            
-	                            <div class="form-group">
-	                                <label class="col-md-2 control-label">RGBa format:</label>
-	                                <div class="col-md-10">
-		                                <input type="text" value="rgb(0,194,255,0.78)" class="color-picker form-control" data-color-format="rgba">
-	                                </div>
-	                            </div>
-	                            
-	                            <div class="form-group">
-	                                <label class="col-md-2 control-label">As component:</label>
-	                                <div class="col-md-10">
-	                                    <div class="input-group color color-picker" data-color="rgb(255, 146, 180)" data-color-format="rgb">
-	                                        <input type="text" class="form-control" readonly="readonly">
-	                                        <span class="input-group-addon"><i style="background-color: rgb(255, 146, 180)"></i></span>
-	                                    </div>
-	                                </div>
-	                            </div>
-
-	                            <div>
-	                                <label class="col-md-2 control-label">Using events:</label>
-	                                <div class="col-md-10">
-		                                <a href="#" class="btn btn-success change-sidebar-color" data-color-format="hex" data-color="rgb(255, 255, 255)">Change sidebar color</a>
-	                                </div>
-	                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-	            <div class="col-md-6">
-		            <div class="panel panel-default">
-		                <div class="panel-heading"><h6 class="panel-title"><i class="icon-droplet2"></i> Time picker</h6></div>
-		                <div class="panel-body">
-		                	<div class="row form-horizontal">
-	                            <div class="form-group">
-	                                <label class="col-md-2 control-label">Default:</label>
-	                                <div class="col-md-10">
-		                                <input id="defaultValueExample" type="text" placeholder="Default time picker" class="form-control">
-	                                </div>
-	                            </div>
-	                            
-	                            <div class="form-group">
-	                                <label class="col-md-2 control-label">Duration:</label>
-	                                <div class="col-md-10">
-		                                <input id="durationExample" type="text" placeholder="Duration example" class="form-control">
-	                                </div>
-	                            </div>
-	                            
-	                            <div class="form-group">
-	                                <label class="col-md-2 control-label">Event:</label>
-	                                <div class="col-md-10">
-		                                <input id="onselectExample" type="text" placeholder="Using events" class="form-control">
-		                                <span id="onselectTarget" class="help-inline"></span>
-	                                </div>
-	                            </div>
-	                            
-	                            <div class="form-group">
-	                                <label class="col-md-2 control-label">Time formats:</label>
-	                                <div class="col-md-10">
-	                                	<div class="row">
-		                                	<div class="col-md-6">
-			                                    <input id="timeformatExample3" type="text" class="form-control" placeholder="24h format">
-		                                    </div>
-
-		                                    <div class="col-md-6">
-			                                    <input id="timeformatExample4" type="text" class="form-control" placeholder="12h format">
-		                                    </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			<!-- /color & time pickers -->
 
 
         	<!-- Labels and badges -->
@@ -1378,14 +889,7 @@
 
 
 	        <!-- Footer -->
-	        <div class="footer clearfix">
-		        <div class="pull-left">&copy; 2013. Londinium Admin Template by <a href="http://themeforest.net/user/Kopyov">Eugene Kopyov</a></div>
-	        	<div class="pull-right icons-group">
-	        		<a href="#"><i class="icon-screen2"></i></a>
-	        		<a href="#"><i class="icon-balance"></i></a>
-	        		<a href="#"><i class="icon-cog3"></i></a>
-	        	</div>
-	        </div>
+	        
 	        @yield('footer')
 	        <!-- /footer -->
 

@@ -1,12 +1,12 @@
 		<div class="sidebar">
 			<div class="sidebar-content">
-
+				@if(\Auth::check())
 				<!-- User dropdown -->
 				<div class="user-menu dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<img src="http://placehold.it/300" alt="">
 						<div class="user-info">
-							Madison Gartner <span>Web Developer</span>
+							{{ \Auth::user()->name }} <span>Web Developer</span>
 						</div>
 					</a>
 					<div class="popup dropdown-menu dropdown-menu-right">
@@ -22,7 +22,7 @@
 						    </div>
 					    
 					    	<div class="caption text-center">
-					    		<h6>Madison Gartner <small>Front end developer</small></h6>
+					    		<h6>{{ \Auth::user()->name }} <small>----</small></h6>
 					    	</div>
 				    	</div>
 
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<!-- /user dropdown -->
-
+				@endif
 
 				<!-- Main navigation -->
 				<ul class="navigation">
