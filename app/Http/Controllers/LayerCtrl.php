@@ -230,8 +230,6 @@ class LayerCtrl extends Controller {
 
 			$array['value'] = $value;
 			array_push($array2,$array);
-			
-		
 		return json_encode($array2);
 	}
 	public function getDesc(){

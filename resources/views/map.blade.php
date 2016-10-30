@@ -30,6 +30,14 @@
                 <div id='geocodeDijit'>
                 </div>
             </div>
+            <div class="login">
+                @if(Auth::user())
+                <a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                <a href="{{ url('admin/logout') }}"><i class="icon-user"></i> Logout</a>
+                @else
+                <a href="{{ url('admin/login') }}"><i class="icon-user"></i> Login</a>
+                @endif
+            </div>
             <div class="headerLinks">
                 <div id="helpDijit">
                 </div>

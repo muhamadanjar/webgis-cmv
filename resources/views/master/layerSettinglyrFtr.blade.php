@@ -62,15 +62,15 @@ $url_service = ($layers->tipelayer == 'dynamic' ? $layers->layerurl.'/'.$idx : $
                 <th>Nama</th>
                 <th>Alias</th>
               </tr>
+
+
               @if($lengthkey_ > 0)
                   {{--*/ $var ='' /*--}}
                   @foreach($field->fields as $key => $a)
                   <?php $b = ($layers->tipelayer == 'dynamic' ? $a->alias : $a->name); ?>
-                    
                     @if($encode_key[$key]->fieldName == $b )
                       {{--*/ $c = $encode_key[$key]->label /*--}}
                       @if($encode_key[$key]->visible)
-                          
                           {{--*/ $var = 'checked' /*--}}
                           
                       @endif
@@ -164,6 +164,8 @@ $url_service = ($layers->tipelayer == 'dynamic' ? $layers->layerurl.'/'.$idx : $
           <input type="text" name="link_m" placeholder="Link URL" class="form-control" id="media" value="{{ $link_m }}">
           <input type="text" name="url_m" placeholder="Source URL" class="form-control" id="media" value="{{ $url_m }}">
         </div>
+
+        <div class="form-group"></div>
 
         <div class="form-group" id="media-list">
           <label for="title">Media</label>

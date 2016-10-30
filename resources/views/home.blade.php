@@ -1,4 +1,4 @@
-@extends('app')
+@extends('template.londinium')
 
 @section('content')
 <div class="container">

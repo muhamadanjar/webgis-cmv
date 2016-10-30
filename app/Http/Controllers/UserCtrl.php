@@ -21,7 +21,6 @@ class UserCtrl extends Controller {
 		return view('master.userAddEdit')->withStatus('add');
 	}
 
-	
 	public function postAddEdit(Request $request){
 		$aksi = (session('aksi') == 'edit') ? 1 : 0;
 		if ($aksi) {
