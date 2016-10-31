@@ -91,8 +91,6 @@ class MapCtrl extends Controller {
 			$arrayfieldinfos['showAttachments'] = $value['showattachments'];
 			$arrayfieldinfos['mediaInfos'] = $value['media'];
 			
-
-		
 			$arraylayerid[(int)$value['layerid']] = $arrayfieldinfos;
 			if(array_key_exists($value['layername'],$arrayname)){
 				$arrayname[$value['layername']] += $arraylayerid;

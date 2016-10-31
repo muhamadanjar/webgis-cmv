@@ -21,7 +21,7 @@ class CAuthController extends Controller {
 
     public function getLogin() {
 
-        return view('cauth.login'); //or just use the default login page
+        return view('cauth.login')->withStatus_login(1); //or just use the default login page
     }
 
     public function postLogin(Request $request) {

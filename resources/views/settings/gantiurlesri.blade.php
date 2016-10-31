@@ -1,7 +1,7 @@
-@extends('app')
+@extends('template.londinium')
 @section('content')
 <div class="panel panel-default">
-    <div class="panel-heading">Ubah URL</div>
+    <div class="panel-heading"><h6 class="panel-title"><i class="icon-file"></i> Ubah URL</h6></div>
     <div class="panel-body">             
         <div class="row">
             <div class="col-md-12">

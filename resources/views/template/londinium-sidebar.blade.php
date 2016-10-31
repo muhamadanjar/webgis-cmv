@@ -44,10 +44,10 @@
 					<li>
 						<a href="#"><span>Navigation levels</span> <i class="icon-stack"></i></a>
 						<ul>
-							<li><a href="#">Second level first item</a></li>
-							<li><a href="#">Second level second item</a>
+							<li><a href="{{ url('admin/layer') }}">Layer</a></li>
+							<li><a href="#">Setting</a>
 								<ul>
-									<li><a href="#">Third level first item</a></li>
+									<li><a href="{{ url('admin/setting/setting-url') }}">Layer</a></li>
 									<li><a href="#">Third level third item</a>
 										<ul>
 											<li><a href="#">Fourth level first item</a></li>

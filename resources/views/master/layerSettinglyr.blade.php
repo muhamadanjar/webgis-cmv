@@ -1,4 +1,4 @@
-@extends('app')
+@extends('template.londinium')
 @section('content')
 <script src="{{ asset('3.12compact/init.js') }}"></script>
 
