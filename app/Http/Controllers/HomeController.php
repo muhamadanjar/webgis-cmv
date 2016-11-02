@@ -13,24 +13,24 @@ class HomeController extends Controller {
 	|
 	*/
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
+	
+	public function __construct(){
 		$this->middleware('auth');
 	}
 
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
+	
+	public function index(){
 		return view('home');
+	}
+
+	public function getMail($value=''){
+		$message = "Line 1\r\nLine 2\r\nLine 3";
+
+		// In case any of our lines are larger than 70 characters, we should use wordwrap()
+		$message = wordwrap($message, 70, "\r\n");
+
+		// Send
+		mail('arvanria@gmail.com', 'My Subject', $message);
 	}
 
 }

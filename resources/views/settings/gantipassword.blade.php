@@ -1,4 +1,4 @@
-@extends('app')
+@extends('template.londinium')
 
 @section('content')
 
@@ -15,7 +15,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Ganti Kata Kunci User</div>
+				<div class="panel-heading"><h6 class="panel-title"><i class="icon-file"></i> Ganti Kata Kunci User</h6></div>
 				<div class="panel-body">
 					<form class="form-horizontal" role="form" method="POST" action="">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
