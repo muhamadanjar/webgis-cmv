@@ -25,7 +25,6 @@ Route::group(array('prefix'=>'admin'), function(){
 	Route::controller('setting','SettingWebCtrl');
 	Route::controller('user','UserCtrl');
 
-
 	Route::get('login',  ['as' => 'login', 'uses' => 'CAuthController@getLogin']);   
 	Route::post('login', ['as'=> 'postlogin', 'uses'=>'CAuthController@postLogin']);
 	Route::get('logout', ['as' => 'logout', 'uses' => 'CAuthController@getLogout']);
