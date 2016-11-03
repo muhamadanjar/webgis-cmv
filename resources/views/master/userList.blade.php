@@ -18,9 +18,9 @@
 @section('breadcrumb')
 <div class="breadcrumb-line">
 	<ul class="breadcrumb">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="layout_fixed_navbar.html">Layouts</a></li>
-		<li class="active">Fixed navbar</li>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Master</a></li>
+		<li class="active">User</li>
 	</ul>
 
 	<div class="visible-xs breadcrumb-toggle">
@@ -85,8 +85,11 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<a href="{{ url('admin/user/tambah') }}" class="btn btn-success">Tambah</a>
-				<div class="panel-heading"><h6 class="panel-title"><i class="icon-user"></i> Daftar User</h6></div>
+				
+				<div class="panel-heading">
+					<h6 class="panel-title"><i class="icon-user"></i> Daftar User</h6>
+					<a href="{{ url('admin/user/tambah') }}" class="pull-right btn btn-xs btn-primary">Tambah</a>
+				</div>
 				<div class="panel-body">
 					<table class="table table-bordered">
 						<tr>

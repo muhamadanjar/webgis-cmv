@@ -58,7 +58,7 @@ class UserCtrl extends Controller {
 		return redirect('admin/user');
 	}
 
-	public function getlevel($layerid=''){
+	public function getLevel($layerid=''){
 		$levelform = \Input::get('level');
 		$array = array();
 		$array2 = array();

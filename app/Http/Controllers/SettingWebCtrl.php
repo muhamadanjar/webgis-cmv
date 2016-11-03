@@ -18,12 +18,14 @@ class SettingWebCtrl extends Controller {
 	public function postSettingUrl(Request $request){
 		$search = $request->search;
 		$replace = $request->replace;
-		$layers = Layer::orderBy('orderlayer','asc')->get();
+		$layers = \App\Layer::orderBy('orderlayer','asc')->get();
 		$array = array();
 		foreach ($layers as $key => $l) {
 			$array[$key] = str_replace($search, $replace, $l->layerurl);
+			
 			\DB::table('layeresri')->where('id_layer', $l->id_layer)->update(['layerurl' => $array[$key]]);
 		}
+		exit();
 		return \Redirect::to('/setting/setting-url');
 		
 	}

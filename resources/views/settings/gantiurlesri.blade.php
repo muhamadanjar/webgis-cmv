@@ -14,8 +14,8 @@
                         
                     @endif
                     
-                    <form class="form-horizontal" role="form" enctype="multipart/form-data">
-                        
+                    <form class="form-horizontal" role="form" enctype="multipart/form-data" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <label for="search" class="col-md-2 control-label-reverse">Cari URL</label>
                             <div class="col-md-8">

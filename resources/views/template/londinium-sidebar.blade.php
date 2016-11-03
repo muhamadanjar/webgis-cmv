@@ -39,12 +39,12 @@
 
 				<!-- Main navigation -->
 				<ul class="navigation">
-					<li><a href="index.html"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
+					<li><a href="index.html"><span>Dashboard </span> <i class="icon-screen2"></i></a></li>
 					
-					<li>
-						<a href="#"><span>Navigation levels</span> <i class="icon-stack"></i></a>
+					<li><a href="#"><span>Master </span> <i class="icon-stack"></i></a>
 						<ul>
 							<li><a href="{{ url('admin/layer') }}">Layer</a></li>
+							<li><a href="{{ url('admin/user') }}">User</a></li>
 							<li><a href="#">Setting</a>
 								<ul>
 									<li><a href="{{ url('admin/setting/setting-url') }}">Layer</a></li>
