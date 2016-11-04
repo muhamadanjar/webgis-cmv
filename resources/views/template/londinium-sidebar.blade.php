@@ -39,7 +39,7 @@
 
 				<!-- Main navigation -->
 				<ul class="navigation">
-					<li><a href="index.html"><span>Dashboard </span> <i class="icon-screen2"></i></a></li>
+					<li><a href="{{ url('home') }}"><span>Dashboard </span> <i class="icon-screen2"></i></a></li>
 					
 					<li><a href="#"><span>Master </span> <i class="icon-stack"></i></a>
 						<ul>

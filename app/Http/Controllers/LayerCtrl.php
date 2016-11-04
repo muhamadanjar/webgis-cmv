@@ -23,10 +23,13 @@ class LayerCtrl extends Controller {
 		return view('master.layerList')->with('layer',$layer);
 	}
 	public function getTambah(){
+		$level = $this->GetDftrLevel();
 		session()->forget('aksi');
 		$aksi = 'add';
 		session()->put('aksi', $aksi);
-		return view('master.LayerAddEdit')->with('aksi',$aksi);
+		return view('master.LayerAddEdit')
+		->with('level',$level)
+		->with('aksi',$aksi);
 	}
 	public function postTambah(Request $request){
 		try {
@@ -42,8 +45,7 @@ class LayerCtrl extends Controller {
 			$layer->id_grouplayer = $request->id_grouplayer;
 			$layer->orderlayer = $request->orderlayer;
 			$layer->tipelayer = $request->tipelayer;
-			
-			
+
 			$layer->option_visible = (bool)$request->option_visible;
 			$layer->option_opacity = $request->option_opacity;
 			$layer->jsonfield = $request->jsonfield;
@@ -54,14 +56,37 @@ class LayerCtrl extends Controller {
 		    throw $e;
 		}
 
+		try {
+			if($request->level != null){
+				$_rolelayer = $this->getLevel($layer->id_layer);
+				if(session('aksi') == 'edit'){
+					$usermodul = DB::table('role_layer')->where('layer_id',$layer->id_layer)->delete();
+				}
+				foreach ($_rolelayer as $key => $value) {
+					$detil = new \App\RoleLayer();
+					
+					$detil->role_id = $value['role_id'];
+					$detil->layer_id = $value['layer_id'];
+					$detil->save();
+				}
+			}
+		}catch (Exception $e) {
+			DB::rollback();
+		    throw $e;
+		}
+
 		return \Redirect::to('admin/layer');
 	}
 	public function getUbah($id){
+		$detil = $this->getVallevelmodul($id);
+		$level = $this->GetDftrLevel($detil);
 		session()->forget('aksi');
 		$aksi = 'edit';
 		session()->put('aksi', $aksi);
 		$layer = \App\Layer::find($id);
-		return view('master.LayerAddEdit')->with('aksi',$aksi)->with('layer',$layer);
+		return view('master.LayerAddEdit')->with('aksi',$aksi)
+		->with('level',$level)
+		->with('layer',$layer);
 	}
 	public function getHapus($id){
 		$layer = Layer::find($id);
@@ -183,13 +208,12 @@ class LayerCtrl extends Controller {
 			foreach ($name as $i => $value) {
 				
 				$v = 0;
-				//echo $i.' '.$visible[$i].' ';
+				
 				if (!isset($visible[$i])) {
 					//array_push($visible, null);
 					$visible[$i] = null;
 				}
 				$v = ($visible[$i] == null ? 0:1);
-				//$v = array_key_exists($i, $visible) == false ? null: $visible[$i];
 				
 				$array['fieldName'] = $name[$i];
 				$array['label'] = $label[$i];
@@ -212,8 +236,6 @@ class LayerCtrl extends Controller {
 		$array = array();
 		$array2 = array();
 		$value = array();
-
-		
 			$array['title'] = $title;
 			$array['caption'] = $caption;
 			$array['type'] = $type; 
@@ -253,6 +275,45 @@ class LayerCtrl extends Controller {
 		$layer->jsonfield = null;
 		$layer->save();
 		return redirect('layer');
+	}
+
+	public function GetDftrLevel($lvl='') {	
+	  	$level = \App\Role::orderBy('id','asc')->get();
+	  	$a = '';
+	  	foreach ($level as $key => $value) {
+	  		$ck = (strpos($lvl, ".".$value->id) === false)? '' : 'checked';
+	  		$a .= "<div class='checkbox'>";
+	  		$a .= "<label><input type='checkbox' name='level[]' class='styled' value='$value->id' $ck><span class='fa fa-check'></span> $value->id - $value->name</label>";
+	  		$a .= "</div>";
+	  	} 
+	  	return $a;
+	}
+
+	public function getVallevelmodul($layerid){
+		$detil = \App\RoleLayer::whereRaw('layer_id = ?',array($layerid))->get();
+		$a='';
+		foreach ($detil as $key => $value) {
+			$a .= '.'.$value->role_id;
+		}
+		return $a;
+	}
+
+	public function getLevel($layerid=''){
+		$levelform = \Input::get('level');
+		$array = array();
+		$array2 = array();
+		if(empty($layerid)){
+			return false;
+		}
+		if($levelform != null){
+			foreach ($levelform as $key => $value) {
+				$array['layer_id'] = $layerid;
+				$array['role_id'] = $value;
+			
+				array_push($array2,$array); 
+			}
+			return $array2;
+		}
 	}
 
 }

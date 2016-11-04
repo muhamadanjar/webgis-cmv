@@ -23,10 +23,9 @@
 			$jsonfield = '';
 		}
 	?>
-	<div class="container">
-		<div class="panel panel-default">
-		<form action="{{ url('admin/layer/tambah') }}" method="post" >
-			
+    <form action="{{ url('admin/layer/tambah') }}" method="post" >
+	    <div class="panel panel-default">
+		
 			<div class="panel-heading">
 			 	<h6 class="panel-title"><i class="icon-file"></i> Layer</h6>
 			</div>
@@ -50,11 +49,15 @@
 		            	<div class="form-group">
                             <label for="layername" class="col-md-2 control-label-kiri">Layer URL</label>
                             <div class="col-md-8">
-                                <input name="layerurl" id="layerurl" class="form-control" value="{{ $layerurl }}" />
+                                <div class="input-group">
+									<input name="layerurl" id="layerurl" class="form-control" value="{{ $layerurl }}" />
+                                    <span class="input-group-btn">
+										<button id="btn-load-layerurl" type="button" class="btn btn-default">Load Data</button>
+									</span>
+								</div>
                             </div>
-                            <div class="col-sm-1">
-                                <button id="btn-load-layerurl" type="button" class="btn btn-default">Load Data</button>
-                            </div>
+                           
+
                         </div>
                     </div>
 
@@ -71,7 +74,9 @@
                         <div class="form-group">
                             <label for="layername" class="col-md-2 control-label-kiri">Non Aktif</label>
                             <div class="col-md-8">
-                                <input name="na" type="checkbox"  value="1" @if($na =='1') checked="checked" @endif />
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" class="switch switch-mini" name="na" type="checkbox"  value="1" @if($na =='1') checked="checked" @endif>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -79,7 +84,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="layername" class="col-md-2 control-label-kiri">Urutan Layer</label>
-                            <div class="col-md-8">
+                            <div class="col-md-1">
                                <input name="orderlayer" class="form-control" value="{{ $orderlayer }}" />
                             </div>
                         </div>
@@ -103,7 +108,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="layername" class="col-md-2 control-label-kiri">Layer Opacity</label>
-                            <div class="col-md-2">
+                            <div class="col-md-1">
                                <input name="option_opacity" class="form-control" value="{{ $option_opacity }}" />
                             </div>
                         </div>
@@ -113,8 +118,12 @@
                         <div class="form-group">
                             <label for="layername" class="col-md-2 control-label-kiri">Layer Visiblity</label>
                             <div class="col-md-1">
-                               <input name="option_visible" type="checkbox" 
-                               @if($option_visible =='1') checked="checked" @endif value="1" />
+                               <div class="checkbox">
+                                    <label>
+                                        <input name="option_visible" class="styled" type="checkbox" 
+                                        @if($option_visible =='1') checked="checked" @endif value="1" />
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -131,11 +140,19 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label-kiri">Hak Akses</label>
+                            <div class="col-md-3">
+                                {!! $level !!}
+                            </div>
+                        </div>
+                    </div>
+                    
                     <input name="jsonfield" id="jsonfield" type="hidden" class="form-control" value="{{ $jsonfield }}" />
 
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-actions text-right">
                             <div class="col-md-11 col-md-offset-1">
                                 <a href="{{ url('admin/layer') }}" class="btn btn-default">Reset</a>
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -146,12 +163,17 @@
 		            
 		        </div>
 	        </div>
-			
-		</form>
-                    <script type="text/javascript" src="{{ asset('3.12compact/init.js')}}"></script>
-                    <script type="text/javascript" src="{{ asset('esriGetFields.js') }}"></script>
 		</div>	
-	</div>					
+	</form>
+           
+@endsection
+
+@section('js_tambahan')
+    <script type="text/javascript" src="{{ asset('3.12compact/init.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('esriGetFields.js') }}"></script>
+    
+@endsection		
+				
 	
 
 

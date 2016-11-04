@@ -2,7 +2,7 @@
 @section('page-header')
 	<div class="page-header">
 		<div class="page-title">
-			<h3>User <small>List user</small></h3>
+			<h3>Layer <small>Jumlah layer yang ada</small></h3>
 		</div>
 
 		<div id="reportrange" class="range">
@@ -18,8 +18,13 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 			 	<h6 class="panel-title"><i class="icon-file"></i> Layer - layer</h6>
+				<a href="{{ action('LayerCtrl@getTambah') }}">
+					<button class="pull-right btn btn-xs btn-primary" type="button">
+						<i class="icon-plus-circle2"></i> Tambah
+					</button>
+				</a>
 			</div>
-			<a href="{{ action('LayerCtrl@getTambah') }}"><button class="btn btn-primary" type="button">Tambah</button></a>
+			
 			    <div class="datatable_">
 				    <table class="table table-striped table-bordered">
 				        <thead>

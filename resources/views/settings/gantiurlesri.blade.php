@@ -1,4 +1,19 @@
 @extends('template.londinium')
+@section('page-header')
+	<div class="page-header">
+		<div class="page-title">
+			<h3>Ganti URL <small>Mengganti URL Web Map Service </small></h3>
+		</div>
+
+		<div id="reportrange" class="range">
+			<div class="visible-xs header-element-toggle">
+				<a class="btn btn-primary btn-icon"><i class="icon-calendar"></i></a>
+			</div>
+			<div class="date-range"></div>
+			<span class="label label-danger">9</span>
+		</div>
+	</div>
+@endsection
 @section('content')
 <div class="panel panel-default">
     <div class="panel-heading"><h6 class="panel-title"><i class="icon-file"></i> Ubah URL</h6></div>

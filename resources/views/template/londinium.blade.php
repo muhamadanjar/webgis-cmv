@@ -7,9 +7,7 @@
 <title>WebGIS - CMV</title>
 
 @include('template.londinium-css')
-
 @include('template.londinium-script')
-<script type="text/javascript" src="{{ asset('js/application.js')}}"></script>
 
 </head>
 
@@ -194,22 +192,13 @@
 	</div>
 	<!-- /navbar -->
 	<?php
-
 	$status = (isset($status_login)) ? 1 : 0;
-	
-	
-	
 	?>
-
-	
 	<!-- Page container -->
  	<div class="page-container">
-
-
 		<!-- Sidebar -->
 		@include('template.londinium-sidebar')
 		<!-- /sidebar -->
-		
 		@if($status == 1)
 			@yield('content')
 		@else
@@ -233,11 +222,11 @@
            	@yield('content')
 
 	        <!-- Footer -->
-	        
 	        @yield('footer')
 	        <!-- /footer -->
 
-
+			@include('vendor.modal')
+			
 		</div>
 		<!-- /page content -->
 		@endif
@@ -245,6 +234,9 @@
 
 	</div>
 	<!-- /content -->
+	@yield('js_tambahan')
 	
+	<script type="text/javascript" src="{{ asset('simposi.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/application.js')}}"></script>
 </body>
 </html>
