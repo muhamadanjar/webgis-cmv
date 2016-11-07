@@ -33,13 +33,15 @@ class CAuthController extends Controller {
         ]);
         $credentials = $request->only('username', 'password');
         
-        if (Auth::attempt($credentials,$request->has('remember'))){   
-            $user = User::find(Auth::user()->id);
-            $user->latestlogin = date('Y-m-d H:i:s');
-            $user->save();
-            
-           
-            return redirect()->intended($this->redirectPath());
+        $checkuser = User::where('username',$request->username)->first();
+        if ($checkuser->isactive == 1) {
+            if (Auth::attempt($credentials,$request->has('remember'))){   
+                $user = User::find(Auth::user()->id);
+                $user->latestlogin = date('Y-m-d H:i:s');
+                $user->save();
+                //$this->_s->updateSessionMenu();
+                return redirect()->intended($this->redirectPath());
+            }
         }
 
         
