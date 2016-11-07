@@ -30,9 +30,9 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		//return view('welcome');
+		return view('cauth.login')->withStatus_login(1);
 		//return view('video');
-		return view('auth.login_utama');
+		//return view('auth.login_utama');
 	}
 
 

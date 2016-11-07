@@ -40,7 +40,7 @@
 				<!-- Main navigation -->
 				<ul class="navigation">
 					<li><a href="{{ url('home') }}"><span>Dashboard </span> <i class="icon-screen2"></i></a></li>
-					
+					@if(\Auth::check())
 					<li><a href="#"><span>Master </span> <i class="icon-stack"></i></a>
 						<ul>
 							<li><a href="{{ url('admin/layer') }}">Layer</a></li>
@@ -69,6 +69,7 @@
 							<li><a href="#">Second level third item</a></li>
 						</ul>
 					</li>
+					@endif
 				</ul>
 				<!-- /main navigation -->
 				

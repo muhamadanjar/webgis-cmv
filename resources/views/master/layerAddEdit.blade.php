@@ -150,7 +150,7 @@
                     </div>
                     
                     <input name="jsonfield" id="jsonfield" type="hidden" class="form-control" value="{{ $jsonfield }}" />
-
+                    <code class="jsonfield_code"></code>
                     <div class="col-md-12">
                         <div class="form-actions text-right">
                             <div class="col-md-11 col-md-offset-1">
