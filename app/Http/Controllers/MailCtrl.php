@@ -42,10 +42,12 @@ class MailCtrl extends Controller {
 		// Send To
 		$mail->AddAddress( $r->mailto ); // Where to send it
 		if(!$mail->Send()) {
-			echo "Mailer Error: " . $mail->ErrorInfo;
+			$r->session()->flash('status',  'Mailer Error: ' . $mail->ErrorInfo);
 		} else {
-			echo "Message has been sent";
+			$r->session()->flash('status', 'Message has been sent');
 		}
+
+		return redirect('admin/mail/mail');
 	}
 
 }
