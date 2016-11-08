@@ -16,7 +16,6 @@ class LayerCtrl extends Controller {
 		$this->middleware('auth');
 		
 	}
-
 	public function getIndex(){
 
 		$layer = DB::table('layeresri')->get();
@@ -101,9 +100,7 @@ class LayerCtrl extends Controller {
 		return \Redirect::to('admin/layer');
 	}
 
-
-	//Layer Info
-
+	//Setting Layer Info
 	public function getLayerinfo($id) {
 
 		$admin = \Auth::user();
@@ -283,14 +280,14 @@ class LayerCtrl extends Controller {
 		$layer->save();
 		return redirect('layer');
 	}
-
+	//================================
 	public function GetDftrLevel($lvl='') {	
 	  	$level = \App\Role::orderBy('id','asc')->get();
 	  	$a = '';
 	  	foreach ($level as $key => $value) {
 	  		$ck = (strpos($lvl, ".".$value->id) === false)? '' : 'checked';
 	  		$a .= "<div class='checkbox'>";
-	  		$a .= "<label><input type='checkbox' name='level[]' class='styled' value='$value->id' $ck><span class='fa fa-check'></span> $value->id - $value->name</label>";
+	  		$a .= "<label class='checkbox-info'><input type='checkbox' name='level[]' class='styled' value='$value->id' $ck><span class='fa fa-check'></span> $value->id - $value->name</label>";
 	  		$a .= "</div>";
 	  	} 
 	  	return $a;

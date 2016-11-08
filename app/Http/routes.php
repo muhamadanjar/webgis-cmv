@@ -66,7 +66,6 @@ Route::group(array('prefix'=>'debug'), function(){
 	});
 });
 Route::group(array('prefix'=>'admin'), function(){
-	//Route::resource('katalog' , 'KatalogCtrl');
 	Route::get('index','HomeController@index');
 	Route::controller('layer','LayerCtrl');
 	Route::controller('setting','SettingWebCtrl');

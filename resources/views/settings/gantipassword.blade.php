@@ -27,12 +27,11 @@
 							</div>
 						</div>
 						
-
 						<div class="form-group">
 							<label class="col-md-2 control-label">Kata Kunci</label>
 							<div class="col-md-6">
-								<input type="hidden" class="form-control" name="oldpassword" value="{{ $password }}">
 								<input type="password" class="form-control" name="password" value="{{ $password }}">
+								<input type="hidden" class="form-control" name="oldpassword" value="{{ $password }}">
 							</div>
 						</div>
 

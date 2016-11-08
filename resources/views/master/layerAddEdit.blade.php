@@ -64,7 +64,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="layername" class="col-md-2 control-label-kiri">Layer</label>
-                            <div class="col-md-8">
+                            <div class="col-md-3">
                                 <input name="layer" class="form-control" value="{{ $layer_ }}" />
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="layername" class="col-md-2 control-label-kiri">Tipe Layer</label>
-                            <div class="col-md-8">
+                            <div class="col-md-5">
                         		<select name="tipelayer" class="form-control">
 		                            <option value="-">------</option>
 		                           	<option value="dynamic" @if($tipelayer =='dynamic') selected="selected" @endif>dynamic</option>
@@ -119,7 +119,7 @@
                             <label for="layername" class="col-md-2 control-label-kiri">Layer Visiblity</label>
                             <div class="col-md-1">
                                <div class="checkbox">
-                                    <label>
+                                    <label class="checkbox-info">
                                         <input name="option_visible" class="styled" type="checkbox" 
                                         @if($option_visible =='1') checked="checked" @endif value="1" />
                                     </label>
