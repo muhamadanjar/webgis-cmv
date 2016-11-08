@@ -20,7 +20,7 @@ class AHelper {
 		}
 		return $outs;
 	}
-	public static function format_message($message,$type){
+	public static function format_message($message,$type='info'){
         
 		//cancel | checkmark | warning | info
         if($type == 'cancel'){

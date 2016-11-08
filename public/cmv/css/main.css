@@ -60,7 +60,12 @@ body, html {
     position: relative;
     top: 27px;
     right: 10px;
-    text-align: right;
+    /*text-align: right;*/
+}
+.appHeader .login a {
+
+    color: #000;
+ 
 }
 
 .appHeader .headerLinks {
