@@ -66,7 +66,9 @@
 											data-message="Apa anda yakin menghapus {{ $v->username }} ?">
 											<a class= "formConfirm" href="#"><i class="fa fa-bell"></i> Hapus</a>
 										</li>
-										<form action="{{ url('admin/user/hapus', array($v->id) ) }}" method="get" style="display:none" id="frm-{{$v->id}}"></form>
+										<form action="{{ url('admin/user/hapus', array($v->id) ) }}" method="post" style="display:none" id="frm-{{$v->id}}">
+											<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										</form>
                                         <li data-form="#frmaktif-{{$v->id}}" 
 											data-title="Aktif {{ $v->id }}" 
 											data-message="Apa anda yakin mengaktifkan/menonaktifkan {{ $v->username }} ?">

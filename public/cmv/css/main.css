@@ -53,6 +53,16 @@ body, html {
     top: 18px;
     right: 350px;
 }
+
+.appHeader .login {
+    float: right;
+    color: #FFFFFF;
+    position: relative;
+    top: 27px;
+    right: 10px;
+    text-align: right;
+}
+
 .appHeader .headerLinks {
     float: right;
     color: #FFFFFF;

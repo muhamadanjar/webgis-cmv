@@ -25,8 +25,6 @@ class CAuthController extends Controller {
     }
 
     public function postLogin(Request $request) {
-     
-
         $this->validate($request, [
             'username' => 'required', 
             'password' => 'required',

@@ -33,7 +33,15 @@ class LayerCtrl extends Controller {
 	}
 	public function postTambah(Request $request){
 		try {
-			
+			$validator = Validator::make($request->all(), Layer::$rules,Layer::$messages);
+
+			if(!$validator->passes()) {
+				return redirect('modul-add')
+				->with('message', \AHelper::format_message('Error,Coba lagi','cancel'))
+				->withErrors($validator)
+				->withInput();
+			}
+
 			$query = (session('aksi') == 'edit') ? Layer::find($request->id_layer) : new Layer;
 			$layer = $query;
 			$layer->layername = $request->layername;
@@ -41,9 +49,8 @@ class LayerCtrl extends Controller {
 			$layer->layer = $request->layer;
 			$layer->na = (bool)$request->na;
 			
-			
 			$layer->id_grouplayer = $request->id_grouplayer;
-			$layer->orderlayer = $request->orderlayer;
+			$layer->orderlayer = ($request->orderlayer == null) ? 0 : $request->orderlayer;
 			$layer->tipelayer = $request->tipelayer;
 
 			$layer->option_visible = (bool)$request->option_visible;

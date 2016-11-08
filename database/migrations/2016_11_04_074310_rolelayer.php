@@ -27,7 +27,7 @@ class Rolelayer extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('role_layer');
+		Schema::dropIfExists('role_layer');
 	}
 
 }

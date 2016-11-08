@@ -9,4 +9,14 @@ class Layer extends Model {
 
 	protected $hidden = ['jsonfield'];
 
+	public static $rules = array(
+		'layer'=>'required|min:3',
+		'layerurl' => 'required|min:3',
+	);
+
+	public static $messages = [
+	    'layer.required' => 'kode layer harus diisi!',
+		'layerurl.required' => 'Url Layer harus di isi',
+	];
+
 }
