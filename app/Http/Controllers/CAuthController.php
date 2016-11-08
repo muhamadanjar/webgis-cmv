@@ -51,8 +51,6 @@ class CAuthController extends Controller {
             ]);
     }
 
-    
-
     public function getLogout(){
         $this->auth->logout();
 

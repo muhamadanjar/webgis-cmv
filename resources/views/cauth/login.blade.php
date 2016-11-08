@@ -4,7 +4,7 @@
 
 <!-- Login wrapper -->
 	<div class="login-wrapper">
-    	<form action="#" role="form" method="POST" action="{{ url('/admin/login') }}">
+    	<form role="form" method="POST" action="{{ url('/admin/login') }}">
     	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="popup-header">
 				<a href="#" class="pull-left"><i class="icon-user-plus"></i></a>
