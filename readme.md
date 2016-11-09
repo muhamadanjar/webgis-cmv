@@ -21,3 +21,8 @@ Thank you for considering contributing to the Laravel framework! The contributio
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+<pre>
+bower install babel-standalone
+bower install react
+bower install blueimp-file-upload
+</pre>
