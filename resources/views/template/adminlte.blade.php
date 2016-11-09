@@ -505,10 +505,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+      @yield('title')
       <h1>
         Dashboard
         <small>Control panel</small>
       </h1>
+      @yield('breadcrumb')
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
@@ -517,6 +519,7 @@
 
     <!-- Main content -->
     <section class="content">
+      @yield('content')
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
