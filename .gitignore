@@ -3,4 +3,4 @@
 .env
 /nbproject/private/
 /src
-/src/bower_components
+/src/bower_components/*
