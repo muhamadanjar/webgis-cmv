@@ -32,7 +32,6 @@ class WebGISProvider extends ServiceProvider {
 		$this->app->booting(function(){
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
             $loader->alias('AHelper', 'App\Lib\Facades\AHelperClass');
-
 			$loader->alias('MailWebGIS', 'App\Lib\Facades\MailWebGISClass');
         });
 	}

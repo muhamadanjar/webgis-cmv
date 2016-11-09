@@ -72,7 +72,3 @@ Route::group(array('prefix'=>'admin'), function(){
 	Route::get('logout', ['as' => 'logout', 'uses' => 'CAuthController@getLogout']);
 });
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
