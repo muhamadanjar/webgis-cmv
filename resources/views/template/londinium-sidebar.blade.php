@@ -45,6 +45,7 @@
 						<ul>
 							<li><a href="{{ url('admin/layer') }}">Layer</a></li>
 							<li><a href="{{ url('admin/user') }}">User</a></li>
+							<li><a href="{{ url('admin/mail/mail') }}">Mail</a></li>
 							<li><a href="#">Setting</a>
 								<ul>
 									<li><a href="{{ url('admin/setting/setting-url') }}">Layer</a></li>

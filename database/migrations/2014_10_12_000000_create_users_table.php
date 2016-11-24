@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->string('password', 60);
 			$table->timestamp('latestlogin')->nullable();
 			$table->smallInteger('isactive')->nullable();
+			$table->smallInteger('isonline')->default(0)->nullable();
 			$table->smallInteger('level')->nullable();
 			$table->rememberToken();
 			$table->timestamps();

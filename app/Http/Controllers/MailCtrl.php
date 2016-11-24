@@ -52,10 +52,6 @@ class MailCtrl extends Controller {
 		$mail->AddAttachment('images/phpmailer_mini.gif');*/
 
 
-
-
-
-
 		if(!$mail->Send()) {
 			$r->session()->flash('status',  'Mailer Error: ' . $mail->ErrorInfo);
 		} else {
