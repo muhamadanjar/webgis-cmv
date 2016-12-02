@@ -5,7 +5,7 @@
 	<div class="callout callout-info fade in">
 		<button type="button" class="close" data-dismiss="alert">×</button>
 		<h5>Selamat Datang!</h5>
-		
+		<b>{{ \Auth::user()->name }}</b>
 	</div>
 <!-- /callout -->
 
@@ -40,7 +40,7 @@
 			<small>Online</small>
 		</div>
 		<a href="{{ url('admin/setting/statistiklist') }}"><i class="icon-bubbles3"></i></a>
-		<span class="bottom-info bg-primary"> {{$pengunjungonline}} orang yang membuka situs</span>
+		<span class="bottom-info bg-primary"> {{$message}} orang yang membuka situs</span>
 	</li>
 	@endif
 

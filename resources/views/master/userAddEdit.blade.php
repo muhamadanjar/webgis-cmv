@@ -122,7 +122,7 @@ if ($status == 'edit') {
 				
 				</div>
 				<div class="panel-body">
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/user/add-edit') }}">
+					<form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ url('/admin/user/add-edit') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="status" value="{{ $status }}">
 						
@@ -168,12 +168,19 @@ if ($status == 'edit') {
                       
                         
 						<div class="form-group">
-							<label class="col-md-2 control-label">Lvel</label>
+							<label class="col-md-2 control-label">Level</label>
 							<div class="col-md-2">
 								<select name="level" class="form-control">
-									<option value="2">Operator</option>
+									<option value="9">Operator</option>
 								</select>
 								
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-2 control-label">Image</label>
+							<div class="col-md-6">
+								<input type="file" class="styled" name="image">
 							</div>
 						</div>
                         

@@ -4,7 +4,7 @@
 				<!-- User dropdown -->
 				<div class="user-menu dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<img src="http://placehold.it/300" alt="">
+						<img src="{{$foto_300}}" alt="">
 						<div class="user-info">
 							{{ \Auth::user()->name }} <span>Web Developer</span>
 						</div>
@@ -12,7 +12,7 @@
 					<div class="popup dropdown-menu dropdown-menu-right">
 					    <div class="thumbnail">
 					    	<div class="thumb">
-								<img alt="" src="http://placehold.it/300">
+								<img alt="" src="{{$foto_300}}">
 								<div class="thumb-options">
 									<span>
 										<a href="#" class="btn btn-icon btn-success"><i class="icon-pencil"></i></a>

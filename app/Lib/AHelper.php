@@ -455,10 +455,10 @@ class AHelper {
         return ($path !== false AND is_dir($path)) ? $path : false;
     }  
 	
-    function UploadImage($fupload,$vdir_upload ='',$watermark_show=false,$image_thumbnail=false){
+    function UploadImage($fupload,$vdir_upload ='',$name_upload ='',$watermark_show=false,$image_thumbnail=false){
       	//direktori gambar
         //$fupload = $request->file('images');
-        $fuploadName = /*$fupload->getClientOriginalName();*/str_random(20).'.'.$fupload->getClientOriginalExtension();
+        $fuploadName = $name_upload;/*$fupload->getClientOriginalName();str_random(20).'.'.$fupload->getClientOriginalExtension();*/
         $fuploadExt = $fupload->getClientOriginalExtension();
         $fuploadSize = $fupload->getSize();
 

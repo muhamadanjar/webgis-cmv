@@ -27,7 +27,7 @@
 				        </div>
 
                         <div class="form-actions text-right">
-                        	<input type="submit" value="Submit form" class="btn btn-primary">
+                        	<input type="submit" value="Kirim" class="btn btn-primary">
                         </div>
 
 				    </div>

@@ -10,7 +10,13 @@
 @include('template.londinium-script')
 
 </head>
-
+	@if(Auth::check())
+		<?php $namafoto = (\Auth::user()->image == null) ? 'no_photo.png': \Auth::user()->image;?>
+		<?php $namafoto_300 = (\Auth::user()->image == null) ? 'no_photo_300.png': \Auth::user()->image;?>
+		<?php $foto = asset('/images/users/'.$namafoto);?>
+		<?php $foto_300 = asset('/images/users/'.$namafoto_300);?>
+		
+	@endif
 <body class="navbar-fixed">
 
 	<!-- Navbar -->
@@ -88,14 +94,14 @@
 					<ul class="popup-messages">
 						<li class="unread">
 							<a href="#">
-								<img src="http://placehold.it/300" alt="" class="user-face">
+								<img src="{{$foto_300}}" alt="" class="user-face">
 								<strong>Eugene Kopyov <i class="icon-attachment2"></i></strong>
 								<span>Aliquam interdum convallis massa...</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="http://placehold.it/300" alt="" class="user-face">
+								<img src="{{$foto_300}}" alt="" class="user-face">
 								<strong>Jason Goldsmith <i class="icon-attachment2"></i></strong>
 								<span>Aliquam interdum convallis massa...</span>
 							</a>
@@ -176,7 +182,7 @@
 
 			<li class="user dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
-					<img src="http://placehold.it/300" alt="">
+					<img src="{{$foto_300}}" alt="">
 					<span>{{ \Auth::user()->name }}</span>
 					<i class="caret"></i>
 				</a>

@@ -4,12 +4,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use App\Lib\AHelper;
 
 class UserCtrl extends Controller {
 
 	public function __construct($value=''){
 		$this->middleware('auth.admin');
-		$this->ahelper =  new \AHelper();
+		$this->ahelper =  new AHelper();
 	}
 
 	public function getIndex(){
@@ -23,37 +24,50 @@ class UserCtrl extends Controller {
 	}
 
 	public function postAddEdit(Request $request){
-		$fileName = str_random(20) . '.' . $request->file('image')->getClientOriginalExtension();	
-		$status = 0;
-		$aksi = (session('aksi') == 'edit') ? 1 : 0;
-		if ($aksi) {
-			$user = User::find($request->id);
-			$status = 1;
-		}else{
-			$user = new User();
+		if ($request->isMethod('post')) {
+			if($request->exists('image')){
+				$fileName = str_random(20) . '.' . $request->file('image')->getClientOriginalExtension();
+			}
+				
 			$status = 0;
-		}
-		if($fileName != null){
-			$this->ahelper->UploadImage($request->file('image'),public_path('images/users'));
-			$users->image = $fileName;
-		}
-		$user->username = $request->username;
-		$user->name = $request->name;
-		$user->email = $request->email;
-		if($request->oldpassword == $request->password){
-			$users->password = $request->oldpassword;		
-		}else{
-			$users->password = bcrypt($request->password);			
-		}
-		$user->level = $request->level;
+			$aksi = (session('aksi') == 'edit') ? 1 : 0;
+			if ($aksi) {
+				$user = User::find($request->id);
+				if($request->exists('image')){
+					$check_image = file_exists(public_path('images/users').'/'.$user->image);
+					if($check_image) unlink(public_path('images/users').'/'.$user->image);
+					$this->ahelper->UploadImage($request->file('image'),public_path('images/users'),$fileName);
+					$user->image = $fileName;
+				}
+			}else{
+				$user = new User();
+				if($request->exists('image')){
+					$this->ahelper->UploadImage($request->file('image'),public_path('images/users'),$fileName);
+					$user->image = $fileName;
+				}
+			}
+			
+			$user->username = $request->username;
+			$user->name = $request->name;
+			$user->email = $request->email;
+			if($request->oldpassword == $request->password){
+				$user->password = $request->oldpassword;		
+			}else{
+				$user->password = bcrypt($request->password);			
+			}
+			$user->level = $request->level;
 
-		$user->save();
-		return redirect('admin/user');
+			$user->save();
+			return redirect('admin/user');
+		}else{
+			return redirect('admin/user');
+		}
 	}
 
 
 	public function getUbah($id){
 		$user = User::find($id);
+		session(['aksi'=>'edit']);
 		return view('master.userAddEdit')->withStatus('edit')->withUsers($user);
 	}
 
