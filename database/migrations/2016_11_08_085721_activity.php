@@ -13,9 +13,10 @@ class Activity extends Migration {
 	public function up()
 	{
 		Schema::create('activity', function (Blueprint $table) {
-            $table->serial('idactivity');
+            $table->increments('idactivity');
 			$table->string('iduser',50);
 			$table->string('activity',250);
+			$table->string('type',10);
 			$table->date('tgl');
 			$table->time('time');
            

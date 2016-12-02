@@ -36,6 +36,7 @@ class CAuthController extends Controller {
             if (Auth::attempt($credentials,$request->has('remember'))){   
                 $user = User::find(Auth::user()->id);
                 $user->latestlogin = date('Y-m-d H:i:s');
+                $user->isonline = 1;
                 $user->save();
                 //$this->_s->updateSessionMenu();
                 return redirect()->intended($this->redirectPath());
@@ -50,7 +51,13 @@ class CAuthController extends Controller {
     }
 
     public function getLogout(){
-        $this->auth->logout();
+        $user = User::find($this->auth->user()->id);
+        $user->isonline = 0;
+        if($user->save()){
+            $this->auth->logout();
+        }else{
+            $this->auth->logout();
+        }
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 

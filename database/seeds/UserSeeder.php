@@ -17,7 +17,7 @@ class UserSeeder extends Seeder {
                 'username' => 'admin',
                 'email'    => 'arvanria@gmail.com',
                 'password' => Hash::make('xcWI3128'),
-                
+                'level' => 1,
                 'isactive' => 1,
             ),
             array(
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder {
                 'username' => 'operator',
                 'email'    => 'operator@gmail.com',
                 'password' => Hash::make('xcWI3128'),
-                
+                'level' => 9,
                 'isactive' => 1,
             ),
         );

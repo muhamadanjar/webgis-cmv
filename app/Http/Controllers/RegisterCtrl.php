@@ -24,9 +24,9 @@ class RegisterCtrl extends Controller {
 		$user->email = $request->email;
 		$user->password = Hash::make($request->password);
 		$user->level = $request->level;
-		$user->instansi = $request->instansi;
+		/*$user->instansi = $request->instansi;
 		$user->no_telp = $request->no_telp;
-		$user->jenis_kebutuhan = $request->jenis_kebutuhan;
+		$user->jenis_kebutuhan = $request->jenis_kebutuhan;*/
 		$user->level = 9;
 		$user->isactive = 0;
 

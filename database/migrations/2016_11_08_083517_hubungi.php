@@ -12,7 +12,7 @@ class Hubungi extends Migration {
 	 */
 	public function up(){
 		Schema::create('hubungi', function (Blueprint $table) {
-            $table->serial('idhubungi');
+            $table->increments('idhubungi');
 			$table->string('nama',50);
 			$table->string('email',100);
 			$table->string('subjek',100);

@@ -86,9 +86,6 @@ class SettingWebCtrl extends Controller {
 		$users = \App\User::find(\Auth::user()->id);
 		$users->name = $request->name;
 		$users->email = $request->email;
-		$users->instansi = $request->instansi;
-		$users->no_telp = $request->no_telp;
-		$users->jenis_kebutuhan = $request->jenis_kebutuhan;
 		
 		if($fileName != null){
 			$this->UploadFile($request->file('image'),$fileName);
@@ -177,6 +174,10 @@ class SettingWebCtrl extends Controller {
 			return redirect()->intended($this->redirectPathVisitor());
 		}
 		
+	}
+
+	public function getUseronline(){
+		return \App\User::where('isonline',1)->count();
 	}
 
 	public function setCookie(Request $request){

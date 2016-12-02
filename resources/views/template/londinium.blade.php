@@ -17,7 +17,7 @@
 
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#"><img src="{{ asset('images/logo.png')}}" alt="Administrator"></a>
+			<a class="navbar-brand" href="#"><img src="{{ asset('images/logo_webgis.png')}}" alt="Administrator"></a>
 			<a class="sidebar-toggle"><i class="icon-paragraph-justify2"></i></a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-icons">
 				<span class="sr-only">Toggle navbar</span>
@@ -218,7 +218,6 @@
 					<button data-dismiss="alert" class="close" type="button">×</button>
 					<h5><strong>Whoops!</strong> Ada beberapa masalah dengan apa yang Anda input.</h5>
 					<ul>
-						
 						@foreach ($errors->all() as $error)
 							<li>{{ $error }}</li>
 						@endforeach

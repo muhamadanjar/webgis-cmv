@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration {
 			$table->smallInteger('isactive')->nullable();
 			$table->smallInteger('isonline')->default(0)->nullable();
 			$table->smallInteger('level')->nullable();
+			$table->string('image')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});

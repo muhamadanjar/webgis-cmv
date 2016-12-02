@@ -9,6 +9,7 @@ class UserCtrl extends Controller {
 
 	public function __construct($value=''){
 		$this->middleware('auth.admin');
+		$this->ahelper =  new \AHelper();
 	}
 
 	public function getIndex(){
@@ -22,16 +23,28 @@ class UserCtrl extends Controller {
 	}
 
 	public function postAddEdit(Request $request){
+		$fileName = str_random(20) . '.' . $request->file('image')->getClientOriginalExtension();	
+		$status = 0;
 		$aksi = (session('aksi') == 'edit') ? 1 : 0;
 		if ($aksi) {
 			$user = User::find($request->id);
+			$status = 1;
 		}else{
 			$user = new User();
+			$status = 0;
+		}
+		if($fileName != null){
+			$this->ahelper->UploadImage($request->file('image'),public_path('images/users'));
+			$users->image = $fileName;
 		}
 		$user->username = $request->username;
 		$user->name = $request->name;
 		$user->email = $request->email;
-		$user->password = $request->password;
+		if($request->oldpassword == $request->password){
+			$users->password = $request->oldpassword;		
+		}else{
+			$users->password = bcrypt($request->password);			
+		}
 		$user->level = $request->level;
 
 		$user->save();

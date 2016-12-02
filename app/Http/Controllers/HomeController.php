@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+use App\Http\Controllers\SettingWebCtrl as SW;
 class HomeController extends Controller {
 
 	/*
@@ -20,7 +20,11 @@ class HomeController extends Controller {
 
 	
 	public function index(){
-		return view('home');
+		$sw = new SW();
+		$pengunjungonline = $sw->getPengunjungonline();
+		return view('home')
+		->withPengunjungonline($pengunjungonline)
+		->withUseronline($sw->getUseronline());
 	}
 
 	public function getMail($value=''){
