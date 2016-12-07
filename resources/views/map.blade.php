@@ -16,7 +16,7 @@
     <body class="dbootstrap">
         <div class="appHeader">
             <div class="headerLogo">
-                <img alt="logo" src="images/header_logo.png" height="54" />
+                <img alt="logo" src="images/logo_kaltim.png" height="54" />
             </div>
             <div class="headerTitle">
                 <span id="headerTitleSpan">

@@ -5,13 +5,17 @@ use App\Http\Controllers\Controller;
 use App\Layer;
 use App\Identify;
 use Illuminate\Http\Request;
+use App\Http\Controllers\SettingWebCtrl;
 
 class MapCtrl extends Controller {
 
-	public function __construct($value=''){
+	public function __construct(Request $r){
 		//$this->middleware('date_expired');
+		$this->_setting = new SettingWebCtrl();
+		$this->_r = $r;
 	}
 	public function getIndex(){
+		$this->_setting->getVisitor($this->_r);
 		$layer = $this->getLayer();
 		$identify = $this->getIdentify();
 		return view('map')->withLayer($layer)->withIdentify($identify);

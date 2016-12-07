@@ -188,11 +188,17 @@
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
 					<li><a href="{{ url('admin/setting/gantiprofil') }}"><i class="icon-user"></i> Profile</a></li>
-					<li><a href="#"><i class="icon-bubble4"></i> Messages</a></li>
+					<li><a href="{{ url('admin/messages') }}"><i class="icon-bubble4"></i> Messages</a></li>
 					<li><a href="{{ url('admin/setting/gantipassword') }}"><i class="icon-cog"></i> Settings</a></li>
 					<li><a href="{{ url('admin/logout') }}"><i class="icon-exit"></i> Logout</a></li>
 				</ul>
 			</li>
+		</ul>
+		@else
+		<ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+			<li class="user">
+				<a href="{{ url('admin/login')}}"><i class="icon-user"></i><span>Login</span></a>
+		    </li>
 		</ul>
 		@endif
 	</div>

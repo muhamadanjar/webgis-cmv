@@ -1,4 +1,13 @@
 @extends('template.londinium')
+@section('page-header')
+<div class="page-header">
+	<div class="page-title">
+		<h3>Email <small>Kirim email</small></h3>
+	</div>
+
+	
+</div>
+@endsection
 @section('content')            
             <form class="form-horizontal form-bordered" action="{{ url('admin/mail/mail') }}" method="post" role="form">
 	            <input type="hidden" name="_token" value="{{ csrf_token() }}">

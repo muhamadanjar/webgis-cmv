@@ -13,6 +13,7 @@
 
 Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
+Route::get('message', 'HomeController@getMessage');
 
 Route::controller('map','MapCtrl');
 Route::group(array('prefix'=>'debug'), function(){

@@ -48,6 +48,7 @@ class UserCtrl extends Controller {
 					$this->ahelper->UploadImage($request->file('image'),public_path('images/users'),$fileName);
 					$user->image = $fileName;
 				}
+			$user->level = $request->level;
 			}
 			
 			$user->username = $request->username;
@@ -58,7 +59,7 @@ class UserCtrl extends Controller {
 			}else{
 				$user->password = bcrypt($request->password);			
 			}
-			$user->level = $request->level;
+			
 
 			$user->save();
 			return redirect('admin/user');

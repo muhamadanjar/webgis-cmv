@@ -15,7 +15,7 @@ class HomeController extends Controller {
 
 	
 	public function __construct(){
-		$this->middleware('auth');
+		//$this->middleware('auth');
 	}
 
 	
@@ -35,6 +35,10 @@ class HomeController extends Controller {
 
 		// Send
 		mail('arvanria@gmail.com', 'My Subject', $message);
+	}
+
+	public function getMessage($value=''){
+		return view('master.hubungi');
 	}
 
 }

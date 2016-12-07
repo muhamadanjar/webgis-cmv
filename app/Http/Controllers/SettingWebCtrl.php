@@ -4,7 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Lib\AHelper;
 use Illuminate\Http\Request;
-
+use App\Lib\Statistik;
+use DB;
+use Carbon\Carbon;
 class SettingWebCtrl extends Controller {
 
 	public function __construct(){
@@ -23,10 +25,8 @@ class SettingWebCtrl extends Controller {
 		$array = array();
 		foreach ($layers as $key => $l) {
 			$array[$key] = str_replace($search, $replace, $l->layerurl);
-			
 			\DB::table('layeresri')->where('id_layer', $l->id_layer)->update(['layerurl' => $array[$key]]);
 		}
-		
 		return \Redirect::to('/setting/setting-url');
 		
 	}

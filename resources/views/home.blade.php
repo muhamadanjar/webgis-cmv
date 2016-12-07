@@ -1,6 +1,34 @@
 @extends('template.londinium')
 
+@section('page-header')
+<div class="page-header">
+	<div class="page-title">
+		<h3>Home <small>Tamu</small></h3>
+	</div>
+
+	<div id="reportrange" class="range">
+		<div class="visible-xs header-element-toggle">
+			<a class="btn btn-primary btn-icon"><i class="icon-calendar"></i></a>
+		</div>
+	</div>
+</div>
+@endsection
+
+@section('breadcrumb')
+<div class="breadcrumb-line">
+	<ul class="breadcrumb">
+		<li><a href="index.html">Home</a></li>
+		<li class="active">Dashboard</li>
+	</ul>
+	<div class="visible-xs breadcrumb-toggle">
+		<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+	</div>		
+</div>
+@endsection
+
 @section('content')
+
+@if(\Auth::check())
 <!-- Callout -->
 	<div class="callout callout-info fade in">
 		<button type="button" class="close" data-dismiss="alert">×</button>
@@ -8,7 +36,7 @@
 		<b>{{ \Auth::user()->name }}</b>
 	</div>
 <!-- /callout -->
-
+@endif
 <!-- Info blocks -->
 <ul class="info-blocks">
 	@if(isset($useronline))
@@ -54,7 +82,7 @@
 				<h6 class="panel-title"><i class="icon-file"></i> Home</h6>
 			</div>
 			<div class="panel-body">
-				You are logged in!
+				----
 			</div>
 		</div>
 	</div>

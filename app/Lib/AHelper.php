@@ -454,7 +454,7 @@ class AHelper {
         // If it exist, check if it's a directory
         return ($path !== false AND is_dir($path)) ? $path : false;
     }  
-	
+	// Upload file untuk download file
     function UploadImage($fupload,$vdir_upload ='',$name_upload ='',$watermark_show=false,$image_thumbnail=false){
       	//direktori gambar
         //$fupload = $request->file('images');
@@ -555,8 +555,7 @@ class AHelper {
       imagedestroy($im2);
 	  if($watermark_show == true) $this->watermark_image($vdir_upload.'/'.$fuploadName);
     }
-
-    // Upload file untuk download file
+    
     function UploadFile($fupload,$fileName=''){
         //direktori file
         $destinationPath = public_path('files');
