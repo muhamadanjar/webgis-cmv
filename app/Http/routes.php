@@ -68,6 +68,7 @@ Route::group(array('prefix'=>'admin'), function(){
 	Route::controller('user','UserCtrl');
 	Route::controller('mail','MailCtrl');
 	
+	Route::get('profil',  ['as' => 'profil', 'uses' => 'AdminCtrl@getProfil']);
 	Route::get('login',  ['as' => 'login', 'uses' => 'CAuthController@getLogin']);   
 	Route::post('login', ['as'=> 'postlogin', 'uses'=>'CAuthController@postLogin']);
 	Route::get('logout', ['as' => 'logout', 'uses' => 'CAuthController@getLogout']);
