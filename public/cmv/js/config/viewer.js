@@ -23,6 +23,16 @@ define([
         spatialReference:{wkid:4326}
     });
 
+    var KaltimEx = new Extent({
+        xmin:12293782.886295728,
+        ymin:-122751.5762906585,
+        xmax:13757704.852013037,
+        ymax:467953.7782970266,
+        spatialReference:{wkid:102100}
+    });
+
+       
+
     return {
         // used for debugging your app
         isDebug: true,
@@ -33,9 +43,9 @@ define([
         mapOptions: {
             basemap: 'streets',
             //center: [106.8046895, -6.418258],
-            zoom: 10,
+            zoom: 6,
             sliderStyle: 'small',
-            extent: CibinongEx,
+            extent: KaltimEx,
         },
         
         // panes: {

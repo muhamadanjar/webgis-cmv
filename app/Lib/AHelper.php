@@ -462,7 +462,7 @@ class AHelper {
         $fuploadExt = $fupload->getClientOriginalExtension();
         $fuploadSize = $fupload->getSize();
 
-        //$vdir_upload = public_path('images');
+        $vdir_upload = public_path($vdir_upload);
         $vfile_upload = $vdir_upload .'/'. $fuploadName;
        
         $fupload->move($vdir_upload, $fuploadName);

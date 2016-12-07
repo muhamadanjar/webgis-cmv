@@ -2,13 +2,14 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Lib\AHelper;
 use Illuminate\Http\Request;
 
 class SettingWebCtrl extends Controller {
 
 	public function __construct(){
 		$this->middleware('auth');
+		$this->ahelper = new AHelper();
 	}
 
 	public function getSettingUrl(){
@@ -25,7 +26,7 @@ class SettingWebCtrl extends Controller {
 			
 			\DB::table('layeresri')->where('id_layer', $l->id_layer)->update(['layerurl' => $array[$key]]);
 		}
-		exit();
+		
 		return \Redirect::to('/setting/setting-url');
 		
 	}
@@ -103,7 +104,7 @@ class SettingWebCtrl extends Controller {
 
 	function UploadFile($fupload,$fileName){
         //direktori file
-        $destinationPath = public_path('files');
+        $destinationPath = public_path('images/users');
         if (!file_exists($destinationPath)) {
             mkdir($destinationPath, 0777);
             echo "The directory $destinationPath was successfully created.";
