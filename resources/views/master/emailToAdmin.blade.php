@@ -29,7 +29,7 @@
 				        </div>
 	
 				        <div class="form-group">
-				            <label class="col-sm-2 control-label">Textarea:</label>
+				            <label class="col-sm-2 control-label">Pesan:</label>
 				            <div class="col-sm-10">
 				            	<textarea rows="5" cols="5" class="form-control" name="body"></textarea>
 				            </div>
