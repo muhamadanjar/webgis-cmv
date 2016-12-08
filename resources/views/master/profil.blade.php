@@ -23,7 +23,7 @@
 			    		<div class="block">
 						    <div class="thumbnail">
 						    	<div class="thumb">
-									<img alt="" src="http://placehold.it/300">
+									<img alt="" src="{{ config('global.placehold300') }}">
 									<div class="thumb-options">
 										<span>
 											<a href="#" class="btn btn-icon btn-success"><i class="icon-pencil"></i></a>
@@ -33,7 +33,7 @@
 							    </div>
 						    
 						    	<div class="caption text-center">
-						    		<h6>Madison Gartner <small>Front end developer</small></h6>
+						    		<h6>{{\Auth::user()->name }} <small>Front end developer</small></h6>
 					    			<div class="icons-group">
 				                    	<a href="#" title="Google Drive" class="tip"><i class="icon-google-drive"></i></a>
 				                    	<a href="#" title="Twitter" class="tip"><i class="icon-twitter"></i></a>

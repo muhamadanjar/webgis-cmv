@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>WebGIS - CMV</title>
+<link rel="icon" href="{{ config('global.icon') }}" type="image/png" sizes="16x16">
+<title>{{ config('global.siteTitle') }}</title>
 
 @include('template.londinium-css')
 @include('template.londinium-script')
@@ -187,9 +188,10 @@
 					<i class="caret"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
-					<li><a href="{{ url('admin/setting/gantiprofil') }}"><i class="icon-user"></i> Profile</a></li>
+					<li><a href="{{ url('map') }}"><i class="icon-map"></i> Map</a></li>
+					<li><a href="{{ url('admin/profil') }}"><i class="icon-user"></i> Profile</a></li>
 					<li><a href="{{ url('admin/messages') }}"><i class="icon-bubble4"></i> Messages</a></li>
-					<li><a href="{{ url('admin/setting/gantipassword') }}"><i class="icon-cog"></i> Settings</a></li>
+					<li><a href="{{ url('admin/setting/gantipassword') }}"><i class="icon-info"></i> Change Password</a></li>
 					<li><a href="{{ url('admin/logout') }}"><i class="icon-exit"></i> Logout</a></li>
 				</ul>
 			</li>
@@ -270,4 +272,6 @@
 	<script type="text/javascript" src="{{ asset('simposi.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/application.js')}}"></script>
 </body>
+
+
 </html>
