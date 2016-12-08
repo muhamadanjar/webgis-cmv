@@ -34,10 +34,10 @@ class UserCtrl extends Controller {
 			if ($aksi) {
 				$user = User::find($request->id);
 				if($request->exists('image')){
-					/*if(isset($user->image)){
-						$check_image = file_exists(public_path('images/users').'/'.$user->image);
-						if($check_image) unlink(public_path('images/users').'/'.$user->image);
-					}*/
+					if(isset($user->image)){
+						$check_image = file_exists(public_path().'/images/users/'.$user->image);
+						if($check_image) unlink(public_path().'/images/users/'.$user->image);
+					}
 					
 					$this->ahelper->UploadImage($request->file('image'),public_path('images/users'),$fileName);
 					$user->image = $fileName;

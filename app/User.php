@@ -31,4 +31,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	public function photo(){
+		if(file_exists( public_path() . '/images/users/' . $this->id . '.png')) {
+			return '/images/photos/' . $this->id .'.png';
+		} else {
+			return '/images/photos/user/no_photo.png';
+		}     
+	}
+
 }
