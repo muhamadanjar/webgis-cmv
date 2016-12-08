@@ -1,4 +1,4 @@
-<?php
+<?php namespace App\Lib;
 
 class Activity {
     function __construct(){

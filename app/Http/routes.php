@@ -16,7 +16,7 @@ Route::get('home', 'HomeController@index');
 Route::get('message', 'HomeController@getMessage');
 
 Route::controller('map','MapCtrl');
-Route::group(array('prefix'=>'debug'), function(){
+/*Route::group(array('prefix'=>'debug'), function(){
 	Route::get('mail',function(){
 		$to      = 'arvanria@example.com';
 		$subject = 'the subject';
@@ -60,17 +60,12 @@ Route::group(array('prefix'=>'debug'), function(){
 		}
 		//var_dump( $mail->send() );      // Send!
 	});
-});
+});*/
+
 Route::group(array('prefix'=>'admin'), function(){
-	Route::get('index','HomeController@index');
 	Route::controller('layer','LayerCtrl');
 	Route::controller('setting','SettingWebCtrl');
 	Route::controller('user','UserCtrl');
 	Route::controller('mail','MailCtrl');
-	
-	Route::get('profil',  ['as' => 'profil', 'uses' => 'AdminCtrl@getProfil']);
-	Route::get('login',  ['as' => 'login', 'uses' => 'CAuthController@getLogin']);   
-	Route::post('login', ['as'=> 'postlogin', 'uses'=>'CAuthController@postLogin']);
-	Route::get('logout', ['as' => 'logout', 'uses' => 'CAuthController@getLogout']);
 });
-
+Route::controller('admin','AdminCtrl');

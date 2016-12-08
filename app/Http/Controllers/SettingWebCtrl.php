@@ -181,6 +181,10 @@ class SettingWebCtrl extends Controller {
 		return \App\User::where('isonline',1)->count();
 	}
 
+	public function getPesanBelumDibaca(){
+		return \DB::table('hubungi')->where('dibaca',0)->count();
+	}
+
 	public function setCookie(Request $request){
       $minutes = 1;
       $response = new Response('Hello World');

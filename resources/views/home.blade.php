@@ -51,7 +51,7 @@
 	@endif
 
 	@if(isset($pengunjungonline))
-	<li class="bg-info">
+	<li class="bg-danger">
 		<div class="top-info">
 			<a href="#">Pengunjung</a>
 			<small>Online</small>
@@ -72,6 +72,15 @@
 	</li>
 	@endif
 
+	<li class="bg-info">
+		<div class="top-info">
+			<a href="#">Pesan</a>
+			<small>histori pesan</small>
+		</div>
+		<a href="#"><i class="icon-bubbles3"></i></a>
+		<span class="bottom-info bg-primary">{{$pesanbelumdibaca}} Belum dibaca</span>
+	</li>
+
 </ul>
 <!-- /info blocks -->
 
@@ -87,5 +96,89 @@
 		</div>
 	</div>
 </div>
+
+<!-- Newest team members -->
+<h6><i class="icon-people"></i> New team members</h6>
+<div class="row">
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="block">
+			<div class="thumbnail">
+				<a href="#" class="thumb-zoom lightbox" title="Eugene A. Kopyov">
+					<img src="http://placehold.it/300">
+				</a>
+						
+				<div class="caption text-center">
+					<h6>Eugene A. Kopyov <small>UX designer</small></h6>
+				    	<div class="icons-group">
+			                <a href="#" title="Google Drive" class="tip"><i class="icon-google-drive"></i></a>
+			                <a href="#" title="Twitter" class="tip"><i class="icon-twitter"></i></a>
+			                <a href="#" title="Github" class="tip"><i class="icon-github3"></i></a>
+		                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="block">
+			<div class="thumbnail">
+				<a href="#" class="thumb-zoom lightbox" title="Sophia R. McJamer">
+					<img src="http://placehold.it/300">
+				</a>
+					    
+				<div class="caption text-center">
+					<h6>Sophia R. McJamer <small>Media designer</small></h6>
+				    	<div class="icons-group">
+			                <a href="#" title="Google Drive" class="tip"><i class="icon-google-drive"></i></a>
+			                <a href="#" title="Twitter" class="tip"><i class="icon-twitter"></i></a>
+			                <a href="#" title="Github" class="tip"><i class="icon-github3"></i></a>
+		                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="block">
+			<div class="thumbnail">
+				<a href="#" class="thumb-zoom lightbox" title="Noah Kennedy">
+					<img src="http://placehold.it/300">
+				</a>
+					    
+				<div class="caption text-center">
+					<h6>Noah Kennedy <small>CEO &amp; founder</small></h6>
+				    	<div class="icons-group">
+			                <a href="#" title="Google Drive" class="tip"><i class="icon-google-drive"></i></a>
+			            	<a href="#" title="Twitter" class="tip"><i class="icon-twitter"></i></a>
+			                <a href="#" title="Github" class="tip"><i class="icon-github3"></i></a>
+		                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="block">
+			<div class="thumbnail">
+				<a href="#" class="thumb-zoom lightbox" title="Noah Kennedy">
+					<img src="http://placehold.it/300">
+				</a>
+					    
+				<div class="caption text-center">
+					<h6>Noah Kennedy <small>CEO &amp; founder</small></h6>
+				    	<div class="icons-group">
+			                <a href="#" title="Google Drive" class="tip"><i class="icon-google-drive"></i></a>
+			            	<a href="#" title="Twitter" class="tip"><i class="icon-twitter"></i></a>
+			                <a href="#" title="Github" class="tip"><i class="icon-github3"></i></a>
+		                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+	
+<!-- /newest team members -->
 
 @endsection

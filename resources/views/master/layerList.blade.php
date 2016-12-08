@@ -18,7 +18,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 			 	<h6 class="panel-title"><i class="icon-file"></i> Layer - layer</h6>
-				<a href="{{ action('LayerCtrl@getTambah') }}">
+				<a href="{{ url('admin/layer') }}">
 					<button class="pull-right btn btn-xs btn-primary" type="button">
 						<i class="icon-plus-circle2"></i> Tambah
 					</button>

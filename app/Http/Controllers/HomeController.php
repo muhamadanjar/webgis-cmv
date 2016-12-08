@@ -22,8 +22,10 @@ class HomeController extends Controller {
 	public function index(){
 		$sw = new SW();
 		$pengunjungonline = $sw->getPengunjungonline();
+		$pesanbelumdibaca = $sw->getPesanBelumDibaca();
 		return view('home')
 		->withPengunjungonline($pengunjungonline)
+		->withPesanbelumdibaca($pesanbelumdibaca)
 		->withUseronline($sw->getUseronline());
 	}
 
