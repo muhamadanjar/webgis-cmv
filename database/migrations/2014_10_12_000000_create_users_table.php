@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
 			$table->string('email')->unique();
 			$table->string('password', 60);
 			$table->timestamp('latestlogin')->nullable();
+			$table->string('phone',14)->nullable();
 			$table->smallInteger('isactive')->nullable();
 			$table->smallInteger('isonline')->default(0)->nullable();
 			$table->smallInteger('level')->nullable();

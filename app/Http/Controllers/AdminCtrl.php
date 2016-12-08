@@ -43,7 +43,11 @@ class AdminCtrl extends Controller {
 		return $this->login->getLogout();
 	}
 
-	//Layer
+	//Messages
+
+	public function getMessage(){
+		return view('master.hubungiList');
+	}
 	
 
 	

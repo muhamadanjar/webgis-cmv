@@ -93,11 +93,7 @@ class SettingWebCtrl extends Controller {
 			$users->image = $fileName;
 		}
 
-		if($request->oldpassword == $request->password){
-			$users->password = $request->oldpassword;		
-		}else{
-			$users->password = bcrypt($request->password);			
-		}
+		
 		$users->save();
 		return redirect('admin/setting/gantiprofil');
 	}

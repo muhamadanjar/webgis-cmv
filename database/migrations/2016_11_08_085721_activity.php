@@ -16,6 +16,7 @@ class Activity extends Migration {
             $table->increments('idactivity');
 			$table->string('iduser',50);
 			$table->string('activity',250);
+			$table->string('ip',20);
 			$table->string('type',10);
 			$table->date('tgl');
 			$table->time('time');
