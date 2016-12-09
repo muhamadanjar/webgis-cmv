@@ -19,8 +19,8 @@
 @section('breadcrumb')
 <div class="breadcrumb-line">
 	<ul class="breadcrumb">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="layout_fixed_navbar.html">Layouts</a></li>
+		<li><a href="{{ url() }}">Home</a></li>
+		<li><a href="{{ url('admin/master/index') }}">Master</a></li>
 		<li class="active">Fixed navbar</li>
 	</ul>
 
@@ -98,7 +98,7 @@ $username = '';
 $name = '';
 $email = '';
 $password = '';
-
+$username_readonly = '';
 
 if ($status == 'edit') {
 	$id = $users->id;
@@ -108,6 +108,7 @@ if ($status == 'edit') {
 	$password = $users->password;
 	$oldpassword = $users->password;
 	$nik = $users->nik;
+	$username_readonly = 'readonly';
 }
 
 ?>
@@ -134,7 +135,7 @@ if ($status == 'edit') {
 						<div class="form-group">
 							<label class="col-md-2 control-label">Username</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="username" value="{{ $username }}">
+								<input type="text" class="form-control" name="username" value="{{ $username }}" <?php echo $username_readonly ?>>
 							</div>
 						</div>
 

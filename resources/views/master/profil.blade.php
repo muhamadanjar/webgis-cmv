@@ -23,7 +23,7 @@
 			    		<div class="block">
 						    <div class="thumbnail">
 						    	<div class="thumb">
-									<img alt="" src="{{ config('global.placehold300') }}">
+									<img alt="" src="{{ $foto_300 }}">
 									<div class="thumb-options">
 										<span>
 											<a href="#" class="btn btn-icon btn-success"><i class="icon-pencil"></i></a>
@@ -199,7 +199,7 @@
 						        		<li>
 						                	<div class="clearfix">
 						                		<div class="chat-member">
-													<a href="#"><img src="http://placehold.it/300" alt=""></a> 
+													<a href="#"><img src="{{$foto_300}}" alt=""></a> 
 													<h6>Eugene Kopyov <span class="status status-success"></span> <small>&nbsp; /&nbsp; Wed developer</small></h6>
 												</div>
 												<div class="chat-actions">

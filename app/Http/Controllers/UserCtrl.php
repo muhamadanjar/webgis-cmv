@@ -39,13 +39,15 @@ class UserCtrl extends Controller {
 						if($check_image) unlink(public_path().'/images/users/'.$user->image);
 					}
 					
-					$this->ahelper->UploadImage($request->file('image'),public_path('images/users'),$fileName);
+					$this->ahelper->UploadImage($request->file('image'),'images/users',$fileName);
+					//$this->ahelper->UploadFile($request->file('image'),'images/users',$fileName);
 					$user->image = $fileName;
 				}
 			}else{
 				$user = new User();
 				if($request->exists('image')){
-					$this->ahelper->UploadImage($request->file('image'),public_path('images/users'),$fileName);
+					$this->ahelper->UploadImage($request->file('image'),'images/users',$fileName);
+					//$this->ahelper->UploadFile($request->file('image'),'images/users',$fileName);
 					$user->image = $fileName;
 				}
 			$user->level = $request->level;

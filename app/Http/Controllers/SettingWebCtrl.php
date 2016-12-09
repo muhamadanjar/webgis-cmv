@@ -92,7 +92,6 @@ class SettingWebCtrl extends Controller {
 			$this->UploadFile($request->file('image'),$fileName);
 			$users->image = $fileName;
 		}
-
 		
 		$users->save();
 		return redirect('admin/setting/gantiprofil');
