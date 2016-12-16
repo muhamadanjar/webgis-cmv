@@ -53,12 +53,12 @@ class MailCtrl extends Controller {
 
 
 		if(!$mail->Send()) {
-			$r->session()->flash('status',  'Mailer Error: ' . $mail->ErrorInfo);
+			$r->session()->flash('status',  'Error Pesan: ' . $mail->ErrorInfo);
 		} else {
-			$r->session()->flash('status', 'Message has been sent');
+			$r->session()->flash('status', 'Pesan telah di kirim');
 		}
 
-		//return redirect('admin/mail/mail');
+		return redirect('admin/mail/mail');
 	}
 
 }

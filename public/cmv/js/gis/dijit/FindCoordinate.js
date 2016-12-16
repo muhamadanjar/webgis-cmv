@@ -232,10 +232,13 @@ define([
 		},
 		coordinate: function () {
         	console.log('coordinate');
-        	//XText = this.kordinatxTextDijit.value;
-        	//YText = this.kordinatyTextDijit.value;
-        	var XText = this.kordinatxTextDijit.get('value');
-        	var YText = this.kordinatyTextDijit.get('value');
+			this.createResultsGrid();
+			this.clearResultsGrid();
+			this.clearFeatures();
+        	XText = this.kordinatxTextDijit.value;
+        	YText = this.kordinatyTextDijit.value;
+        	//var XText = this.kordinatxTextDijit.get('value');
+        	//var YText = this.kordinatyTextDijit.get('value');
         	console.log('X'+XText+' Y'+YText);
         	maxZoom = this.map.getMaxZoom();
         	  
@@ -261,7 +264,7 @@ define([
 
 			if (zoomExtent) {
 				this.zoomToExtent(zoomExtent);
-				this.map.setZoom(maxZoom - 8);
+				//this.map.setZoom(maxZoom - 8);
 			}
 
     		//this.map.centerAndZoom(point,this.map.getZoom()+3); 
