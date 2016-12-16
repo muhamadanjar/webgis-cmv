@@ -67,5 +67,6 @@ Route::group(array('prefix'=>'admin'), function(){
 	Route::controller('setting','SettingWebCtrl');
 	Route::controller('user','UserCtrl');
 	Route::controller('mail','MailCtrl');
+	Route::controller('hubungi','HubungiCtrl');
 });
 Route::controller('admin','AdminCtrl');

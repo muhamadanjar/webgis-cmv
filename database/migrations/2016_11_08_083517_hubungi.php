@@ -16,6 +16,7 @@ class Hubungi extends Migration {
 			$table->string('nama',50);
 			$table->string('email',100);
 			$table->string('subjek',100);
+			$table->string('ip',15);
 			$table->text('pesan');
 			$table->date('tanggal');
 			$table->time('jam');
