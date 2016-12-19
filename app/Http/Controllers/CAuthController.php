@@ -11,6 +11,7 @@ use App\User;
 class CAuthController extends Controller {
 
     protected $redirectTo = 'map';
+    protected $redirect = 'home';
     
     protected $loginPath = 'admin/login';
     public function __construct(Guard $auth){

@@ -14,7 +14,7 @@ use App\Http\Controllers\MailCtrl;
 use Illuminate\Http\Request;
 
 class AdminCtrl extends Controller {
-
+	protected $redirect;
 	public function __construct(Guard $auth){
 		$this->setting = new SettingWebCtrl();
 		$this->login = new LoginCtrl($auth);
@@ -45,12 +45,9 @@ class AdminCtrl extends Controller {
 
 	//Messages
 
-	public function getMessage(){
+	public function getAllmessage(){
 		return view('master.hubungiList');
 	}
-	
-
-	
 
 
 

@@ -264,6 +264,14 @@ define([
 
 			if (zoomExtent) {
 				this.zoomToExtent(zoomExtent);
+				var kabupatenbogor = new Extent({
+					xmin:11854886.2463439,
+					ymin:-752236.7337139085,
+					xmax:11919628.409301355,
+					ymax:-715546.9601370738,
+					spatialReference:{wkid:102100}
+				});
+				//this.map.setExtent(kabupatenbogor);
 				//this.map.setZoom(maxZoom - 8);
 			}
 

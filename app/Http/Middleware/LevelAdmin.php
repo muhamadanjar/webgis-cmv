@@ -18,7 +18,7 @@ class LevelAdmin {
 				return redirect()->guest('admin/login');
 			}
 		}else{
-			if ($this->auth->user()->level != 1) {
+			if ($this->auth->user()->level != 1 && !Auth::user()->hasRole('admin')) {
 				return redirect()->guest('admin/login');
 			}
 		}
