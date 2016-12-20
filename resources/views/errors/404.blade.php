@@ -29,12 +29,22 @@
 				font-size: 72px;
 				margin-bottom: 40px;
 			}
+
+			.error-template {padding: 40px 15px;text-align: center;}
+			.error-actions {margin-top:15px;margin-bottom:15px;}
+			.error-actions .btn { margin-right:10px; }
 		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="content">
 				<div class="title">Be right back.</div>
+				<div class="error-template">
+					<div class="error-actions">
+						<a href="{{ url('home') }}" class="btn btn-primary btn-lg"><span class="icon-home"></span>
+							Take Me Home </a><a href="{{ url('home') }}" class="btn btn-default btn-lg"><span class="icon-contact"></span> Contact Support </a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

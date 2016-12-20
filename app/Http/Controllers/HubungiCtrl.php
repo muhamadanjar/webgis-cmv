@@ -13,7 +13,8 @@ class HubungiCtrl extends Controller {
 	}
 
 	public function getIndex(){
-		return view('master.hubungiList');
+		$pesan = \App\Hubungi::orderBy('idhubungi','ASC')->get();
+		return view('master.hubungiList')->withPesan($pesan);
 	}
 
 	public function getTambah(){

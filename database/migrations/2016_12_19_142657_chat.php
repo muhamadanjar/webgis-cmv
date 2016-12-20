@@ -12,7 +12,16 @@ class Chat extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('chat', function(Blueprint $table){
+			$table->increments('idchat');
+			$table->unsignedInteger('id_user');
+			$table->string('ip',20);
+			$table->string('os',60);
+			$table->string('browser',60)->nullable();
+			$table->date('tanggal');
+			$table->time('jam');
+
+		});
 	}
 
 	/**
@@ -22,7 +31,7 @@ class Chat extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::dropIfExists('chat');
 	}
 
 }

@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+ 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
@@ -10,6 +10,7 @@ use App\Http\Controllers\SettingWebCtrl;
 use App\Http\Controllers\LayerCtrl;
 use App\Http\Controllers\CAuthController as LoginCtrl;
 use App\Http\Controllers\MailCtrl;
+use App\Http\Controllers\HubungiCtrl;
 
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class AdminCtrl extends Controller {
 		$this->setting = new SettingWebCtrl();
 		$this->login = new LoginCtrl($auth);
 		$this->layer = new LayerCtrl();
+		$this->hubungi =  new HubungiCtrl();
 		$this->middleware('auth.admin',['except' => array('getLogin','postLogin')]);
 	}
 
@@ -45,8 +47,8 @@ class AdminCtrl extends Controller {
 
 	//Messages
 
-	public function getAllmessage(){
-		return view('master.hubungiList');
+	public function getAllmessages(){
+		return $this->hubungi->getIndex();
 	}
 
 

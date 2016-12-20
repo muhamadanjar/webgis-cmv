@@ -88,7 +88,7 @@
 				</a>
 				<div class="popup dropdown-menu dropdown-menu-right">
 					<div class="popup-header">
-						<a href="#" class="pull-left"><i class="icon-spinner7"></i></a>
+						<a href="{{ url('admin/allmessages') }}" class="pull-left"><i class="icon-spinner7"></i></a>
 						<span>Messages</span>
 						<a href="#" class="pull-right"><i class="icon-new-tab"></i></a>
 					</div>
