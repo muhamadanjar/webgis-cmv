@@ -12,6 +12,10 @@ class ChatCtrl extends Controller {
 		$this->middleware('auth');
 	}
 
+	public function getIndex($value=''){
+		return view('master.chat');
+	}
+
 	public function getMessages($username=''){
 		$username = stripslashes(htmlspecialchars($username));
 

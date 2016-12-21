@@ -11,6 +11,7 @@ use App\Http\Controllers\LayerCtrl;
 use App\Http\Controllers\CAuthController as LoginCtrl;
 use App\Http\Controllers\MailCtrl;
 use App\Http\Controllers\HubungiCtrl;
+use App\Http\Controllers\ChatCtrl;
 
 use Illuminate\Http\Request;
 
@@ -21,6 +22,7 @@ class AdminCtrl extends Controller {
 		$this->login = new LoginCtrl($auth);
 		$this->layer = new LayerCtrl();
 		$this->hubungi =  new HubungiCtrl();
+		$this->chat = new ChatCtrl();
 		$this->middleware('auth.admin',['except' => array('getLogin','postLogin')]);
 	}
 
@@ -43,6 +45,10 @@ class AdminCtrl extends Controller {
 
 	public function getLogout(){
 		return $this->login->getLogout();
+	}
+
+	public function getChat(){
+		return $this->chat->getIndex();
 	}
 
 	//Messages
