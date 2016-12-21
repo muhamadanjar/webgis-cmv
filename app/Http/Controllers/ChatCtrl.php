@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Lib\Statistik;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ChatCtrl extends Controller {
@@ -37,8 +38,16 @@ class ChatCtrl extends Controller {
 			die();
 			exit();
 		}
+		$dt = Carbon::now();
 		\DB::table('chat')->insert(
-			['id_user' => 'john@example.com', 'ip' => 0, 'os' => '','browser' => '']
+			[
+			'id_user' => \Auth::user()->id_user, 
+			'ip' => $_SERVER['REMOTE_ADDR'], 
+			'os' => Statistik::os_user(),
+			'browser' => Statistik::browser_user(),
+			'tanggal'=>$dt,
+			'jam'=> $dt->toTimeString()
+			]
 		);
 
 		/*$result = $db->prepare("INSERT INTO messages VALUES('',?,?)");
