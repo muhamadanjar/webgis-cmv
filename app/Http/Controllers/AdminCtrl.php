@@ -47,9 +47,9 @@ class AdminCtrl extends Controller {
 		return $this->login->getLogout();
 	}
 
-	public function getChat(){
+	/*public function getChat(){
 		return $this->chat->getIndex();
-	}
+	}*/
 
 	//Messages
 

@@ -212,7 +212,7 @@ function update() {
 
 			}
 		}
-	      xmlhttp.open("GET","get-messages.php?username=" + username,true);
+	      xmlhttp.open("GET","chat/messages/" + username,true);
 	      xmlhttp.send();
 }
 
@@ -234,7 +234,7 @@ function sendmsg() {
 				msginput.value = "";
 			}
 		}
-	      xmlhttp.open("GET","update-messages.php?username=" + username + "&message=" + message,true);
+	      xmlhttp.open("GET","chat/updatemessages/" + username + "/" + message,true);
 	      xmlhttp.send();
   	}
 

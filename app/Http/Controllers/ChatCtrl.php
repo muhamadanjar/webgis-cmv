@@ -10,6 +10,7 @@ class ChatCtrl extends Controller {
 
 	public function __construct(){
 		$this->middleware('auth');
+		$this->statistik = new Statistik();
 	}
 
 	public function getIndex($value=''){
@@ -30,8 +31,16 @@ class ChatCtrl extends Controller {
 			echo $r[2];
 			echo "\n";*/
 		$result = \DB::table('chat')->get();
-
-		return $result;
+		
+		$msg ="";
+		foreach ($result as $key => $value) {
+			$msg .= $value->browser;
+			$msg .= '\\';
+			$msg .= $value->messages;
+			$msg .= '\n';
+		}
+		
+		return $msg;
 	}
 
 	public function getUpdatemessages($username,$message){
@@ -45,12 +54,13 @@ class ChatCtrl extends Controller {
 		$dt = Carbon::now();
 		\DB::table('chat')->insert(
 			[
-			'id_user' => \Auth::user()->id_user, 
+			'id_user' => \Auth::user()->id, 
 			'ip' => $_SERVER['REMOTE_ADDR'], 
-			'os' => Statistik::os_user(),
-			'browser' => Statistik::browser_user(),
+			'os' => $this->statistik->os_user(),
+			'browser' => $this->statistik->browser_user(),
 			'tanggal'=>$dt,
-			'jam'=> $dt->toTimeString()
+			'jam'=> $dt->toTimeString(),
+			'messages' => $message,
 			]
 		);
 

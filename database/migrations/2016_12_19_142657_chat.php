@@ -20,7 +20,7 @@ class Chat extends Migration {
 			$table->string('browser',60)->nullable();
 			$table->date('tanggal');
 			$table->time('jam');
-
+			$table->string('messages');
 		});
 	}
 
