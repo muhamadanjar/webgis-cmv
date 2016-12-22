@@ -12,6 +12,7 @@ class CAuthController extends Controller {
 
     protected $redirectTo = 'map';
     protected $redirect = 'home';
+    protected $redirectPath = 'home';
     
     protected $loginPath = 'admin/login';
     public function __construct(Guard $auth){

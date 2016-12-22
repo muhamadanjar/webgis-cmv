@@ -193,17 +193,21 @@ function update() {
 	var output = "";
 		xmlhttp.onreadystatechange=function() {
 			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				
 				var response = xmlhttp.responseText.split("\n")
+				
 				var rl = response.length
 				var item = "";
 				for (var i = 0; i < rl; i++) {
 					item = response[i].split("\\")
+					console.log(item);
 					if (item[1] != undefined) {
 						if (item[0] == username) {
 							output += "<div class=\"msgc\" style=\"margin-bottom: 30px;\"> <div class=\"msg msgfrom\">" + item[1] + "</div> <div class=\"msgarr msgarrfrom\"></div> <div class=\"msgsentby msgsentbyfrom\">Sent by " + item[0] + "</div> </div>";
 						} else {
 							output += "<div class=\"msgc\"> <div class=\"msg\">" + item[1] + "</div> <div class=\"msgarr\"></div> <div class=\"msgsentby\">Sent by " + item[0] + "</div> </div>";
 						}
+						
 					}
 				}
 

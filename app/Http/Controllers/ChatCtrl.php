@@ -27,27 +27,27 @@ class ChatCtrl extends Controller {
 		$result = $result->get_result();
 		while ($r = $result->fetch_row()) {
 			echo $r[1];
-			echo "\\";
-			echo $r[2];
-			echo "\\n";*/
+		echo "\\";
+		echo $r[2];
+		echo "\n";*/
 		$result = \DB::table('chat')->get();
 		
 		$msg ="";
 		foreach ($result as $key => $value) {
-			$msg .= $value->browser;
+			$msg .= $value->username;
 			$msg .= '\\';
 			$msg .= $value->messages;
-			$msg .= '\n';
+			$msg .= PHP_EOL;
 		}
 		
 		return $msg;
 	}
 
 	public function getUpdatemessages($username,$message){
-		$username = stripslashes(htmlspecialchars($username));
-		$message = stripslashes(htmlspecialchars($message));
+		$_username = stripslashes(htmlspecialchars($username));
+		$_message = stripslashes(htmlspecialchars($message));
 
-		if ($message == "" || $username == "") {
+		if ($_message == "" || $_username == "") {
 			die();
 			exit();
 		}
@@ -58,7 +58,7 @@ class ChatCtrl extends Controller {
 			'ip' => $_SERVER['REMOTE_ADDR'], 
 			'os' => $this->statistik->os_user(),
 			'browser' => $this->statistik->browser_user(),
-			'tanggal'=>$dt,
+			'tanggal'=> $dt,
 			'jam'=> $dt->toTimeString(),
 			'messages' => $message,
 			]
