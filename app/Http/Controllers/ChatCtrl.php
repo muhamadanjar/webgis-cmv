@@ -29,7 +29,7 @@ class ChatCtrl extends Controller {
 			echo $r[1];
 			echo "\\";
 			echo $r[2];
-			echo "\n";*/
+			echo "\\n";*/
 		$result = \DB::table('chat')->get();
 		
 		$msg ="";
