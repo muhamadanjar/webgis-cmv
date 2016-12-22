@@ -126,7 +126,7 @@
 		}
 	</style>
 </head>
-<body onload="checkcookie(); update();">
+<body onload="checkcookie();chooseusername('{{ \Auth::user()->username }}'); update();">
 <div id="whitebg"></div>
 <div id="loginbox">
 <h1>Pick a username:</h1>
@@ -143,9 +143,9 @@
 var msginput = document.getElementById("msginput");
 var msgarea = document.getElementById("msg-area");
 
-function chooseusername() {
+function chooseusername(setname) {
 	var user = document.getElementById("cusername").value;
-	document.cookie="messengerUname=" + user
+	document.cookie="messengerUname=" + setname
 	checkcookie()
 }
 
@@ -188,6 +188,7 @@ function escapehtml(text) {
 }
 
 function update() {
+	
 	var xmlhttp=new XMLHttpRequest();
 	var username = getcookie("messengerUname");
 	var output = "";
@@ -199,15 +200,14 @@ function update() {
 				var rl = response.length
 				var item = "";
 				for (var i = 0; i < rl; i++) {
-					item = response[i].split("\\")
-					console.log(item);
+					item = response[i].split("\\");
 					if (item[1] != undefined) {
 						if (item[0] == username) {
 							output += "<div class=\"msgc\" style=\"margin-bottom: 30px;\"> <div class=\"msg msgfrom\">" + item[1] + "</div> <div class=\"msgarr msgarrfrom\"></div> <div class=\"msgsentby msgsentbyfrom\">Sent by " + item[0] + "</div> </div>";
 						} else {
 							output += "<div class=\"msgc\"> <div class=\"msg\">" + item[1] + "</div> <div class=\"msgarr\"></div> <div class=\"msgsentby\">Sent by " + item[0] + "</div> </div>";
 						}
-						
+
 					}
 				}
 
@@ -244,7 +244,7 @@ function sendmsg() {
 
 }
 
-setInterval(function(){ update() }, 2500);
+setInterval(function(){ update() }, 5000);
 </script>
 </body>
 </html>

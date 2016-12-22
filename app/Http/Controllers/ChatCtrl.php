@@ -55,11 +55,13 @@ class ChatCtrl extends Controller {
 		\DB::table('chat')->insert(
 			[
 			'id_user' => \Auth::user()->id, 
-			'ip' => $_SERVER['REMOTE_ADDR'], 
+			'ip' => $_SERVER['REMOTE_ADDR'],
+			
 			'os' => $this->statistik->os_user(),
 			'browser' => $this->statistik->browser_user(),
 			'tanggal'=> $dt,
 			'jam'=> $dt->toTimeString(),
+			'username' => \Auth::user()->username,
 			'messages' => $message,
 			]
 		);
