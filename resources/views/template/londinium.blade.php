@@ -11,13 +11,7 @@
 @include('template.londinium-script')
 
 </head>
-	@if(Auth::check())
-		<?php $namafoto = (\Auth::user()->image == null) ? 'no_photo.png': \Auth::user()->image;?>
-		<?php $namafoto_300 = (\Auth::user()->image == null) ? 'no_photo_300.png': \Auth::user()->image;?>
-		<?php $foto = asset('/images/users/'.$namafoto);?>
-		<?php $foto_300 = asset('/images/users/'.$namafoto_300);?>
-		
-	@endif
+	
 <body class="navbar-fixed">
 
 	<!-- Navbar -->

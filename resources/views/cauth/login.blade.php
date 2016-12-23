@@ -13,8 +13,8 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cogs"></i></a>
                     <ul class="dropdown-menu icons-right dropdown-menu-right">
 						<li><a href="#"><i class="icon-people"></i> Change user</a></li>
-						<li><a href="#"><i class="icon-info"></i> Forgot password?</a></li>
-						<li><a href="#"><i class="icon-support"></i> Contact admin</a></li>
+						<li><a href="#"><i class="icon-info"></i> Lupa password?</a></li>
+						<li><a href="#"><i class="icon-support"></i> Hubungi admin</a></li>
 						<li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
                     </ul>
 				</div>

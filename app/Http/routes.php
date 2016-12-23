@@ -71,3 +71,5 @@ Route::group(array('prefix'=>'admin'), function(){
 	Route::controller('chat','ChatCtrl');
 });
 Route::controller('admin','AdminCtrl');
+//Route::get('admin/login_manual', 'CAuthController@getLogin');
+//Route::post('admin/login_manual', 'CAuthController@postLogin');
