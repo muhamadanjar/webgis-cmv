@@ -12,7 +12,6 @@ class CAuthController extends Controller {
 
     protected $redirectTo = 'map';
     protected $redirect = 'home';
-    protected $redirectPath = 'home';
     
     protected $loginPath = 'admin/login';
     public function __construct(Guard $auth){
@@ -41,6 +40,8 @@ class CAuthController extends Controller {
                 $user->isonline = 1;
                 $user->save();
                 //$this->_s->updateSessionMenu();
+                //dd(redirect()->intended());
+                //exit();
                 return redirect()->intended($this->redirectPath());
             }
         }
@@ -68,11 +69,11 @@ class CAuthController extends Controller {
     }
 
     public function redirectPath(){
-        if (property_exists($this, 'redirectPath')){
-            return $this->redirectPath;
+        if (property_exists($this, 'redirect')){
+            return $this->redirect;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+        return property_exists($this, 'redirect') ? $this->redirect : '/home';
     }
 
     public function loginPath(){
