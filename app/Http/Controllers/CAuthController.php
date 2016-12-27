@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use App\Services\AnjarService;
 //use App\Lib\AHelper;
+use Carbon\Carbon;
 use Session;
 use App\User;
 
@@ -36,7 +37,7 @@ class CAuthController extends Controller {
         if ($checkuser->isactive == 1) {
             if (Auth::attempt($credentials,$request->has('remember'))){   
                 $user = User::find(Auth::user()->id);
-                $user->latestlogin = date('Y-m-d H:i:s');
+                $user->latestlogin = Carbon::now();
                 $user->isonline = 1;
                 $user->save();
                 //$this->_s->updateSessionMenu();

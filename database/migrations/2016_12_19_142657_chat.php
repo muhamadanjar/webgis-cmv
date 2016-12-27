@@ -15,6 +15,7 @@ class Chat extends Migration {
 		Schema::create('chat', function(Blueprint $table){
 			$table->increments('idchat');
 			$table->unsignedInteger('id_user');
+			$table->unsignedInteger('id_room');
 			$table->string('username',20);
 			$table->string('ip',20);
 			$table->string('os',60);
