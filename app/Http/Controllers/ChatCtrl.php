@@ -17,6 +17,10 @@ class ChatCtrl extends Controller {
 		return view('master.chat');
 	}
 
+	public function getLond($value=''){
+		return view('master.chat_londinium');
+	}
+
 	public function getMessages($username=''){
 		$username = stripslashes(htmlspecialchars($username));
 
@@ -37,6 +41,8 @@ class ChatCtrl extends Controller {
 			$msg .= $value->username;
 			$msg .= '\\';
 			$msg .= $value->messages;
+			$msg .= '\\';
+			$msg .= $value->tanggal;
 			$msg .= PHP_EOL;
 		}
 		

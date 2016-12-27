@@ -36,7 +36,7 @@
 		    	</div>
 				<div class="form-group has-feedback">
 					<label>Username</label>
-					<input type="text" class="form-control" placeholder="Username" name="username">
+					<input type="text" class="form-control" placeholder="Username" name="username" {{ old('username') }}>
 					<i class="icon-users form-control-feedback"></i>
 				</div>
 

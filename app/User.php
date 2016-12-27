@@ -30,7 +30,25 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+	public function roles(){
+        return $this->belongsToMany('App\Role');
+    }
 
+    public function assignRole($role){
+        return $this->roles()->attach($role);
+    }
+     
+    public function revokeRole($role){
+        return $this->roles()->detach($role);
+    }
+
+    public function hasRole($name){
+        foreach($this->roles as $role)
+        {
+            if ($role->name === $name) return true;
+        }
+        return false;
+    }
 	public function photo(){
 		if(file_exists( public_path() . '/images/users/' . $this->id . '.png')) {
 			return '/images/photos/' . $this->id .'.png';
