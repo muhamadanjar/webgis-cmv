@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Lib\Statistik;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use LRedis;
 
 class ChatCtrl extends Controller {
 
@@ -77,6 +78,17 @@ class ChatCtrl extends Controller {
 		$result->bind_param("ss", $username, $message);
 		$result->execute();*/
 
+	}
+
+	public function form_chat($value='')
+	{
+		return view('master.form_chat');
+	}
+	public function sendMessage(){
+		$redis = LRedis::connection();
+		$data = ['message' => Request::input('message'), 'user' => Request::input('user')];
+		$redis->publish('message', json_encode($data));
+		return response()->json([]);
 	}
 
 	

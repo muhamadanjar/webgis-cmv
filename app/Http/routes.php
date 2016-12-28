@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
 Route::get('message', 'HomeController@getMessage');
 
 Route::controller('map','MapCtrl');
@@ -71,5 +71,7 @@ Route::group(array('prefix'=>'admin'), function(){
 	Route::controller('chat','ChatCtrl');
 });
 Route::controller('admin','AdminCtrl');
+Route::get('/home', 'ChatCtrl@form_chat');
+Route::post('sendmessage', 'ChatCtrl@sendMessage');
 //Route::get('admin/login_manual', 'CAuthController@getLogin');
 //Route::post('admin/login_manual', 'CAuthController@postLogin');

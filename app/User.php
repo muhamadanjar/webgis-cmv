@@ -57,4 +57,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		}     
 	}
 
+	public function isOnline(){
+		return \Cache::has('user-is-online-' . $this->id);
+	}
+
+	
+
 }

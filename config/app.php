@@ -184,6 +184,7 @@ return [
 		'Queue'     => 'Illuminate\Support\Facades\Queue',
 		'Redirect'  => 'Illuminate\Support\Facades\Redirect',
 		'Redis'     => 'Illuminate\Support\Facades\Redis',
+		'LRedis'    => 'Illuminate\Support\Facades\Redis',
 		'Request'   => 'Illuminate\Support\Facades\Request',
 		'Response'  => 'Illuminate\Support\Facades\Response',
 		'Route'     => 'Illuminate\Support\Facades\Route',
