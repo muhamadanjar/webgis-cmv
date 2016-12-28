@@ -40,8 +40,8 @@
                 <div class="moment">10 Nov, 2013</div>
 
             </div>
-
-            <textarea name="enter-message" class="form-control" rows="3" cols="1" placeholder="Enter your message..."></textarea>
+            <input type="text" name="msginput" class="form-control" id="msginput" onkeydown="if (event.keyCode == 13) sendmsg()" value="" placeholder="Enter your message here ... (Press enter to send message)">
+            <!--<textarea name="enter-message" class="form-control" rows="3" cols="1"  placeholder="Enter your message..."></textarea>-->
             <div class="message-controls">
 	            <span class="pull-left"><i class="icon-checkmark-circle"></i> Some basic <a href="#" title="">HTML</a> is OK</span>
 	            <div class="pull-right">
@@ -50,7 +50,7 @@
 		                <a href="#" title="" class="tip" data-original-title="Upload photo"><i class="icon-camera3"></i></a>
 		                <a href="#" title="" class="tip" data-original-title="Attach file"><i class="icon-attachment"></i></a>
 	                </div>
-	                <button type="button" class="btn btn-danger btn-loading" data-loading-text="<i class='icon-spinner7 spin'></i> Processing">Submit</button>
+	                <button type="button" onclick="sendmsg()"  class="btn btn-danger btn-loading" data-loading-text="<i class='icon-spinner7 spin'></i> Processing">Submit</button>
 	            </div>
 	        </div>
     </div>
@@ -58,13 +58,13 @@
     <script type="text/javascript">
         window.onload = function () {
             checkcookie();chooseusername('{{ \Auth::user()->username }}'); update();
-            alert('LOADE');
+            alert('LOADED');
         }
         var msginput = document.getElementById("msginput");
         var msgarea = document.getElementById("chat");
 
         function chooseusername(setname) {
-            var user = document.getElementById("cusername").value;
+            //var user = document.getElementById("cusername").value;
             document.cookie="messengerUname=" + setname
             checkcookie()
         }
@@ -81,9 +81,10 @@
 
         function checkcookie() {
             if (document.cookie.indexOf("messengerUname") == -1) {
-                showlogin();
+                //showlogin();
+                window.location.href = 'http://localhost/webgis-cmv/public'
             } else {
-                hideLogin();
+                //hideLogin();
             }
         }
 
@@ -99,7 +100,7 @@
         }
 
         function escapehtml(text) {
-        return text
+            return text
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
@@ -156,7 +157,7 @@
                         msginput.value = "";
                     }
                 }
-                xmlhttp.open("GET","chat/updatemessages/" + username + "/" + message,true);
+                xmlhttp.open("GET","updatemessages/" + username + "/" + message,true);
                 xmlhttp.send();
             }
 

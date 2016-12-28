@@ -15,13 +15,15 @@ class Chat extends Migration {
 		Schema::create('chat', function(Blueprint $table){
 			$table->increments('idchat');
 			$table->unsignedInteger('id_user');
-			$table->unsignedInteger('id_room');
+			$table->unsignedInteger('id_room')->nullable();
 			$table->string('username',20);
 			$table->string('ip',20);
 			$table->string('os',60);
 			$table->string('browser',60)->nullable();
 			$table->date('tanggal');
 			$table->time('jam');
+			$table->string('smiley',60)->nullable();
+			$table->string('foto_file',60)->nullable();
 			$table->string('messages');
 		});
 	}

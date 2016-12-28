@@ -42,7 +42,8 @@ class ChatCtrl extends Controller {
 			$msg .= '\\';
 			$msg .= $value->messages;
 			$msg .= '\\';
-			$msg .= $value->tanggal;
+			
+			$msg .= date('M j Y',strtotime($value->tanggal));
 			$msg .= PHP_EOL;
 		}
 		
