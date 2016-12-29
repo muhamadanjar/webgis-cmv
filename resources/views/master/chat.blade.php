@@ -138,51 +138,7 @@
 		<div class="msg-area" id="msg-area"></div>
 		<div class="bottom"><input type="text" name="msginput" class="msginput" id="msginput" onkeydown="if (event.keyCode == 13) sendmsg()" value="" placeholder="Enter your message here ... (Press enter to send message)"></div>
 	</div>
-	<div class="block">
-            <div class="chat-member-heading clearfix">
-				<h6 class="pull-left"><i class="icon-bubble6"></i> Eugene Kopyov <small>&nbsp;/&nbsp; Wed developer</small></h6>
-				<div class="pull-right">
-					<a href="#" class="btn btn-link btn-icon btn-xs"><i class="icon-phone2"></i></a>
-					<a href="#" class="btn btn-link btn-icon btn-xs"><i class="icon-camera5"></i></a>
-					<a href="#" class="btn btn-link btn-icon btn-xs"><i class="icon-user"></i></a>
-					<a href="#" class="btn btn-primary btn-icon btn-xs"><i class="icon-plus-circle"></i></a>
-				</div>
-            </div>
-                        	
-            <div class="chat">
-                <div class="message">
-                    <a class="message-img" href="#"><img src="http://placehold.it/300" alt=""></a>
-                    <div class="message-body">
-						<span class="typing"></span>
-                    </div>
-                </div>
-
-                <div class="message reversed">
-                    <a class="message-img" href="#"><img src="http://placehold.it/300" alt=""></a>
-                    <div class="message-body">
-                        Nunc volutpat commodo ullamcorper. Vivamus consequat sapien ac ante pharetra pellentesque. Sed molestie leo vitae erat sagittis, ac posuere nibh faucibus. In nec massa suscipit, sagittis ligula non, accumsan velit.
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames.
-                        <span class="attribution">14:23pm, 4th Dec 2010</span>
-                    </div>
-                </div>
-
-                <div class="moment">10 Nov, 2013</div>
-
-            </div>
-
-            <textarea name="enter-message" class="form-control" rows="3" cols="1" placeholder="Enter your message..."></textarea>
-            <div class="message-controls">
-	            <span class="pull-left"><i class="icon-checkmark-circle"></i> Some basic <a href="#" title="">HTML</a> is OK</span>
-	            <div class="pull-right">
-	                <div class="upload-options">
-		                <a href="#" title="" class="tip" data-original-title="Smileys"><i class="icon-smiley"></i></a>
-		                <a href="#" title="" class="tip" data-original-title="Upload photo"><i class="icon-camera3"></i></a>
-		                <a href="#" title="" class="tip" data-original-title="Attach file"><i class="icon-attachment"></i></a>
-	                </div>
-	                <button type="button" class="btn btn-danger btn-loading" data-loading-text="<i class='icon-spinner7 spin'></i> Processing">Submit</button>
-	            </div>
-	        </div>
-    </div>
+	
 <script type="text/javascript">
 
 	var msginput = document.getElementById("msginput");

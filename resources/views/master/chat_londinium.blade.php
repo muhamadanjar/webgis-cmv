@@ -19,7 +19,8 @@
 					<a href="#" class="btn btn-primary btn-icon btn-xs"><i class="icon-plus-circle"></i></a>
 				</div>
             </div>
-                        	
+            <input type="hidden" name="pickusername" id="cusername" value="{{ \Auth::user()->name }}">
+            <input type="hidden" name="pickid" id="cid" value="{{ \Auth::user()->id }}">
             <div class="chat" id="chat">
                 <div class="message">
                     <a class="message-img" href="#"><img src="http://placehold.it/300" alt=""></a>
@@ -64,9 +65,11 @@
         var msgarea = document.getElementById("chat");
 
         function chooseusername(setname) {
-            //var user = document.getElementById("cusername").value;
-            document.cookie="messengerUname=" + setname
-            checkcookie()
+            var user = document.getElementById("cusername").value;
+            var id = document.getElementById("cid").value;
+            document.cookie="messengerUname=" + user;
+            document.cookie="messengerUid=" + id;
+            checkcookie();
         }
 
         function showlogin() {
